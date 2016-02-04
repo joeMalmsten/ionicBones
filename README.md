@@ -1,25 +1,34 @@
-Ionic App Base
+RAS-App Base using [Ionic](http://ionicframework.com) & [requirejs](http://requirejs.org)
 =====================
 
-A starting project for Ionic that optionally supports using custom SCSS.
+A starting project for RAS-App that optionally supports using custom SCSS and lazy loading.
 
 ## Using this project
 
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+Requirements:
+[Node.js](https://nodejs.org/en/)
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+Setup:
+1. Install [Ionic](http://ionicframework.com) with the following command on your cli:
 
 ```bash
-$ npm install -g ionic
+$ npm install -g cordova ionic
 ```
 
-Then run:
 
+2. Install the node modules
 ```bash
-$ ionic start myProject tabs
+$ cd RAS-App
+$ npm install
+```
+
+
+3. Have Ionic serve the app
+```bash
+$ ionic serve
 ```
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
 
 ## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+Go ahead and make an issue on this repo or contact jmalmste.

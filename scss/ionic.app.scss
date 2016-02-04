@@ -18,11 +18,14 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-// common sass mixins
-@import "scss/sass-mixins";
-
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-// Include all custom style and Ionic Overrides
-@import "www/partials/login/loginView";
+// common sass mixins
+@import "scss/sass-mixins";
+
+.RAS-app {
+    // Include all custom style and Ionic Overrides
+    @import "scss/common-util";
+    @import "www/partials/login/loginView";
+}

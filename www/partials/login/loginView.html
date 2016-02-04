@@ -1,10 +1,13 @@
 <div class="login-page">
-    <div class="login-page__header">
-        <span class="login-page__header__label">{{mockHeaderLabel}}</span>
+    <div class="header">
+        <div class="icon logo"></div>
+        <span class="label" ng-bind="mockHeaderLabel"></span>
     </div>
-    <div class="login-page__form">
-        <input type="text" class="login-page__form__input" placeholder="Username">
-        <input type="text" class="login-page__form__input" placeholder="Password">
-        <div class="sales-audit__button sales-audit__button--large" ng-click="submitLogin();">Submit</div>
+    <div class="login-page-form">
+        <span class="label" ng-bind="mockHeaderLabel"></span>
+        <input type="text" class="login-page-input" ng-model="inputValues.userName" placeholder="Username"></input>
+        <input type="text" class="login-page-input" ng-model="inputValues.password" placeholder="Password"></input>
+        <span class="label error-label" ng-bind="errorMessage" ng-class="{'active': displayErrorMessage}"></span>
+        <div class="button" ng-click="submitLogin();">Submit</div>
     </div>
 </div>

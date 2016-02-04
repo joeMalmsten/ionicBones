@@ -4,32 +4,57 @@
     height: 100%;
     background-color: #fff;
 
-    .login-page__header {
+    .header {
         height: 50px;
         width: 100%;
         background-color: #D9D9D9;
         text-align: center;
 
-        .login-page__header__label {
+        .label {
             line-height: 50px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .icon {
+            float: left;
+            margin: 5px 10px;
+
+            &.logo {
+                background-image: url("../assets/img/ladypug.png");
+            }
         }
     }
 
-    .login-page__form {
+    .login-page-form {
         position: absolute;
         transform: translate(-50%, -30%);
         top: 50%;
         left: 50%;
         width: 300px;
-        height: 150px;
         background-color: #D9D9D9;
+        text-align: center;
 
-        .login-page__form__input {
-            position: relative;
-            @include border-radius(2px);
+        input {
             margin: 5px 75px;
-            border: 1px solid #aaa;
-            float: left;
+        }
+
+        .label {
+            display: inline-block;
+            width: 200px;
+            margin: 10px 50px 5px 50px;
+
+            &.error-label {
+                @include opacity(0);
+                &.active {
+                    @include opacity(1);
+                }
+            }
+        }
+
+        .button {
+            display: inline-block;
+            margin: 10px 0px;
         }
     }
 }
