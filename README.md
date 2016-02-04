@@ -8,25 +8,25 @@ A starting project for RAS-App that optionally supports using custom SCSS and la
 Requirements:
 [Node.js](https://nodejs.org/en/)
 
-Setup:
+###Setup:
+
 1. Install [Ionic](http://ionicframework.com) with the following command on your cli:
-
-```bash
-$ npm install -g cordova ionic
-```
-
+        ```
+        $ npm install -g cordova ionic
+        ```
 
 2. Install the node modules
-```bash
-$ cd RAS-App
-$ npm install
-```
-
+        ```
+        $ cd RAS-App
+        ```
+        ```
+        $ npm install
+        ```
 
 3. Have Ionic serve the app
-```bash
-$ ionic serve
-```
+        ```
+        $ ionic serve
+        ```
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
 
