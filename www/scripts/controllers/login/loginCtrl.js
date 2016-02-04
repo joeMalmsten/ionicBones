@@ -13,7 +13,7 @@ define(['angular'], function(angular) {
          *        you don't want private variables tested
          */
         self.mockLoginData = {
-            userName: 'joeM',
+            username: 'joeM',
             password: 'admin'
         };
 
@@ -21,14 +21,13 @@ define(['angular'], function(angular) {
         $scope.errorMessage = "Login information is incorrect.";
         $scope.displayErrorMessage = false;
         $scope.inputValues = {
-            userName: "",
+            username: "",
             password: ""
         };
 
         $scope.submitLogin = function() {
-            if (self.mockLoginData.userName === $scope.inputValues.userName &&
+            if (self.mockLoginData.username === $scope.inputValues.username &&
                 self.mockLoginData.password === $scope.inputValues.password) {
-                console.log("login info matches. Success");
                 $scope.displayErrorMessage = false;
             } else {
                 $scope.displayErrorMessage = true;
