@@ -11,9 +11,9 @@ define([
 function (angular) {
     'use strict';
 
-    var app = angular.module('salesAudit', [
+    var app = angular.module('ionicBones', [
         'ionic',
-        'salesAudit.login'
+        'ionicBones.login'
     ])
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function() {

@@ -3,7 +3,7 @@ define(['angular', 'angularMocks', 'scripts/controllers/login/loginCtrl'], funct
     describe('LoginCtrl', function() {
         var $controller;
 
-        beforeEach(angular.mock.module('salesAudit.login'));
+        beforeEach(angular.mock.module('ionicBones.login'));
         beforeEach(inject(function(_$controller_) {
             // The injector unwraps the underscores (_) from around the parameter names when matching
             $controller = _$controller_;

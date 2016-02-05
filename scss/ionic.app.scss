@@ -24,7 +24,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // common sass mixins
 @import "scss/sass-mixins";
 
-.RAS-app {
+.bonesApp {
     // Include all custom style and Ionic Overrides
     @import "scss/common-util";
     @import "www/partials/login/loginView";

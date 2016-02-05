@@ -1,7 +1,7 @@
-RAS-App Base using [Ionic](http://ionicframework.com) & [requirejs](http://requirejs.org)
+bonesApp Base using [Ionic](http://ionicframework.com) & [requirejs](http://requirejs.org)
 =====================
 
-A starting project for RAS-App that optionally supports using custom SCSS and lazy loading.
+A starting project for bonesApp that optionally supports using custom SCSS and lazy loading.
 
 ## Using this project
 
@@ -19,7 +19,7 @@ Requirements:
 2. Install the node modules
 
         ```
-        $ cd RAS-App
+        $ cd bonesApp
         ```
 
         ```
@@ -51,4 +51,4 @@ This will begin the test task which will run the tests, then continue to watch f
 
 
 ## Issues
-Go ahead and make an issue on this repo or contact jmalmste.
+Go ahead and make an issue on this repo.
