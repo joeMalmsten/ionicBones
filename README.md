@@ -12,25 +12,17 @@ Requirements:
 
 1. Install [Ionic](http://ionicframework.com) with the following command on your cli:
 
-        ```
         $ npm install -g cordova ionic
-        ```
 
 2. Install the node modules
 
-        ```
         $ cd RAS-App
-        ```
 
-        ```
         $ npm install
-        ```
 
 3. Have Ionic serve the app
 
-        ```
         $ ionic serve
-        ```
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
 
