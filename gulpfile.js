@@ -7,10 +7,14 @@ var gulp = require('gulp'),
     minifyCss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
     sh = require('shelljs'),
+    jshint = require('gulp-jshint'),
+    browserify = require('browserify'),
+    vinylSource = require('vinyl-source-stream'),
     karma = require('karma').server;
 
 var paths = {
-    sass: ['./**/*.scss']
+    sass: ['./**/*.scss'],
+    src: ['./www/src/**/*.js']
 };
 
 // wrote this since sass.logError was not handling errors properly and breaking
@@ -21,7 +25,21 @@ var handleError = function(error) {
     this.emit('end');
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'lint', 'browserify']);
+
+gulp.task('lint', function() {
+    gulp.src(['./www/src/**/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('fail'));
+});
+
+gulp.task('browserify', function() {
+    return browserify('./www/src/app.js', {debug: true})
+        .bundle()
+        .pipe(vinylSource('bundle.js'))
+        .pipe(gulp.dest('./www/dist'));
+});
 
 gulp.task('sass', function(done) {
     gulp.src('./scss/ionic.app.scss')

@@ -3,10 +3,12 @@
   "app_id": "",
   "gulpStartupTasks": [
     "sass",
+    "lint",
+    "browserify",
     "watch"
   ],
   "watchPatterns": [
-    "www/**/*",
+    "www/dist/*",
     "!www/lib/**/*"
   ]
 }

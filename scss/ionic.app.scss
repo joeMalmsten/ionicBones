@@ -27,5 +27,5 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .RAS-app {
     // Include all custom style and Ionic Overrides
     @import "scss/common-util";
-    @import "www/partials/login/loginView";
+    @import "www/views/login/loginView";
 }
