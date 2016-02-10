@@ -6,4 +6,5 @@ platforms/
 plugins/
 coverage/
 dist/
+www/assets/css
 **/.DS_Store

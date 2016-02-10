@@ -1,4 +1,4 @@
-RAS-App Base using [Ionic](http://ionicframework.com) & [requirejs](http://requirejs.org)
+RAS-App Base using [Ionic](http://ionicframework.com) & [Browserify](http://browserify.org/)
 =====================
 
 A starting project for RAS-App that optionally supports using custom SCSS and lazy loading.

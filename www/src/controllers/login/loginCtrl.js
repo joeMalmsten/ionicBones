@@ -1,4 +1,4 @@
-/*global angular */
+/*global angular module*/
 var loginModule = angular.module('RAS.login', [])
 .controller('LoginCtrl', ['$scope', function($scope) {
     // This is only needed for possible callbacks, but I still

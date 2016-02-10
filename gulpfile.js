@@ -61,12 +61,12 @@ gulp.task('sass', function() {
     gulp.src('./scss/ionic.app.scss')
         .pipe(sass())
         .on('error', handleError)
-        .pipe(gulp.dest('./www/css/'))
+        .pipe(gulp.dest('./www/assets/css/'))
         .pipe(minifyCss({
             keepSpecialComments: 0
         }))
         .pipe(rename({extname: '.min.css'}))
-        .pipe(gulp.dest('./www/css/'))
+        .pipe(gulp.dest('./www/assets/css/'))
         .pipe(browserSync.stream());
 });
 
@@ -88,6 +88,11 @@ gulp.task('watchBuild', function() {
     bundler.on('update', bundle); // on any dep update, runs the bundler
     bundler.on('log', gutil.log); // output build logs to terminal
     //gulp.watch(paths.sass, ['sasswatch']);
+});
+
+
+gulp.task('watchHtml', function() {
+    gulp.watch(paths.html).on('change', browserSync.reload);
 });
 
 gulp.task('sasswatch', function() {

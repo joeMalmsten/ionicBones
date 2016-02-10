@@ -34848,7 +34848,7 @@ module.exports = angular.module('RAS', [
 .run(require('./main'));
 
 },{"./controllers/login/loginCtrl":4,"./main":5,"./routes":6,"angular":1,"ionic":2}],4:[function(require,module,exports){
-/*global angular */
+/*global angular module*/
 var loginModule = angular.module('RAS.login', [])
 .controller('LoginCtrl', ['$scope', function($scope) {
     // This is only needed for possible callbacks, but I still
