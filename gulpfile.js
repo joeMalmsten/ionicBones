@@ -61,11 +61,9 @@ gulp.task('watch', function() {
 /**
 * Test task, run test once and exit
 */
-gulp.task('test', function(done) {
+gulp.task('test', function() {
     karma.start({
         configFile: __dirname + '/www/karma.conf.js'
-    }, function() {
-        done();
     });
 });
 

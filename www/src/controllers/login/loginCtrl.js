@@ -1,5 +1,5 @@
 /*global angular */
-angular.module('RAS.login', [])
+var loginModule = angular.module('RAS.login', [])
 .controller('LoginCtrl', ['$scope', function($scope) {
     // This is only needed for possible callbacks, but I still
     //  prefer to set it for consistency whenever I need to use 'this'
@@ -32,3 +32,5 @@ angular.module('RAS.login', [])
         }
     };
 }]);
+
+module.exports = loginModule;
