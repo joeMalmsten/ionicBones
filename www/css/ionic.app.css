@@ -9766,7 +9766,7 @@ a.button {
   .RAS-app .login-page .header {
     height: 50px;
     width: 100%;
-    background-color: #D9D9D9;
+    background-color: red;
     text-align: center; }
     .RAS-app .login-page .header .label {
       line-height: 50px;

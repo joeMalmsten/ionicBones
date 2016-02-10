@@ -2,13 +2,14 @@
   "name": "RAS-App",
   "app_id": "",
   "gulpStartupTasks": [
-    "sass",
     "lint",
     "browserify",
-    "watch"
+    "watchBuild",
+    "watchViews"
   ],
   "watchPatterns": [
     "www/dist/*",
     "!www/lib/**/*"
-  ]
+  ],
+  "noBrowser": true
 }

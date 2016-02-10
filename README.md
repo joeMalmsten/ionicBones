@@ -20,9 +20,9 @@ Requirements:
 
         $ npm install
 
-3. Have Ionic serve the app
+3. Have Ionic serve the app (--nobrowser since browser-sync creates a better tab for development with fast live reloading. Without this flag 2 tabs will be made.)
 
-        $ ionic serve
+        $ ionic serve --nobrowser
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
 
