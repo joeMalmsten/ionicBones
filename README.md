@@ -1,8 +1,6 @@
 bonesApp Base using [Ionic](http://ionicframework.com) & [Browserify](http://browserify.org/)
 =====================
 
-A starting project for bonesApp that optionally supports using custom SCSS and lazy loading.
-
 ## Using this project
 
 Requirements:

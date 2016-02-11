@@ -5,6 +5,6 @@ node_modules/
 platforms/
 plugins/
 coverage/
-dist/
+www/dist/
 www/assets/css
 **/.DS_Store
