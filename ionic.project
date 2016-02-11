@@ -5,8 +5,7 @@
     "lint",
     "sass",
     "browserify",
-    "watchBuild",
-    "watchViews"
+    "watch"
   ],
   "watchPatterns": [
     "www/dist/*",

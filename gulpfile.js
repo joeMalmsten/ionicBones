@@ -73,12 +73,18 @@ gulp.task('sass', function() {
 
 gulp.task('browserify', bundle); // so you can run `gulp js` to build the file
 
-// Static Server + watching scss/html files
-gulp.task('watchViews', ['sass'], function() {
-
+gulp.task('watch', function() {
     browserSync.init({
         proxy: "localhost:8100"
     });
+
+    gulp.watch(paths.sass, ['sass']);
+    gulp.watch(paths.html).on('change', browserSync.reload);
+    bundler.on('update', bundle); // on any dep update, runs the bundler
+    bundler.on('log', gutil.log); // output build logs to terminal
+});
+
+gulp.task('watchViews', ['sass'], function() {
 
     gulp.watch(paths.sass, ['sass']);
     gulp.watch(paths.html).on('change', browserSync.reload);

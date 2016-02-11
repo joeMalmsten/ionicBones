@@ -15,7 +15,7 @@ var loginModule = angular.module('RAS.login', [])
         password: 'admin'
     };
 
-    $scope.mockHeaderLabel = "This is a mock header label.";
+    $scope.mockHeaderLabel = "This is a mock label.";
     $scope.errorMessage = "Login information is incorrect.";
     $scope.displayErrorMessage = false;
     $scope.inputValues = {
