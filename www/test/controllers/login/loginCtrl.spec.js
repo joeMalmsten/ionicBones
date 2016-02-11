@@ -4,7 +4,7 @@ require('../../../src/controllers/login/loginCtrl');
 describe('LoginCtrl', function() {
     var $controller;
 
-    beforeEach(angular.mock.module('RAS.login'));
+    beforeEach(angular.mock.module('ionicBones.login'));
     beforeEach(inject(function(_$controller_) {
         // The injector unwraps the underscores (_) from around the parameter names when matching
         $controller = _$controller_;

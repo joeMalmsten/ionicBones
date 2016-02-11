@@ -6,9 +6,9 @@ require('angular');
 require('ionic');
 require('./controllers/login/loginCtrl');
 
-module.exports = angular.module('RAS', [
+module.exports = angular.module('ionicBones', [
     'ionic',
-    'RAS.login'
+    'ionicBones.login'
 ])
 .config(require('./routes'))
 .run(require('./main'));

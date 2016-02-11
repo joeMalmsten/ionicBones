@@ -1,5 +1,5 @@
 {
-  "name": "RAS-App",
+  "name": "bonesApp",
   "app_id": "",
   "gulpStartupTasks": [
     "lint",

@@ -1,5 +1,5 @@
 /*global angular module*/
-var loginModule = angular.module('RAS.login', [])
+var loginModule = angular.module('ionicBones.login', [])
 .controller('LoginCtrl', ['$scope', function($scope) {
     // This is only needed for possible callbacks, but I still
     //  prefer to set it for consistency whenever I need to use 'this'
