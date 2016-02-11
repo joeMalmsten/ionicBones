@@ -1,8 +1,6 @@
-/*global require module angular */
+/*global require module angular*/
 /*jslint node: true */
 'use strict';
-
-require('ionic');
 require('./controllers/login/loginCtrl');
 
 module.exports = angular.module('RAS', [

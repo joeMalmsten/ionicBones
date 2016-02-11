@@ -1,15 +1,70 @@
+//---------------------------------Variables----------------------------------\\
+// Font Weights
+$ultra-light-font: 100;
+$light-font: 200;
+$demi-font: 300;
+$regular-font: 400;
+$medium-font: 500;
+$demi-bold-font: 600;
+$bold-font: 700;
+$extra-bold-font: 800;
+$ultra-bold-font: 900;
+
+
+//-------------------------------Common Elements------------------------------\\
+
+// Keep this at the highest level so any below identifiers can overwrite the
+//  color.
+span, header, h1, h2, h3, h4, h5, h6, input, .button {
+    color: #3d3935;
+    font-family: Avenir Next, Lato Sans, Helvetica;
+}
+
+h1, h2, h3, h4, h5, h6, header {
+    margin: 0;
+}
+
+header, h1, h2, h3, h4, .button {
+    font-weight: $demi-bold-font;
+}
+
+h5, h6, input, span {
+    font-weight: $medium-font;
+}
+
 .button {
     width: 80px;
-    height: 40px;
-    min-height: 40px;
-    line-height: 40px;
-    border: 1px solid #d6d6d6;
-    @include border-radius(5px);
-    background-color: #f6f6f6;
+    height: 25px;
+    min-height: 25px;
+    line-height: 15px;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 5px solid #4a4540;
+    @include border-radius(3px);
+    background-color: #4a4540;
+    color: #e6e0db;
 
     &:hover {
-        background-color: #fafafa;
+        background-color: #33302c;
+        border-color: #4a4540;
     }
+
+    &:active {
+        color: #898076;
+    }
+
+    &.inactive {
+        @include opacity(0.25);
+    }
+}
+
+.header {
+    background-color: #006341;
+}
+
+.form-container {
+    background-color: #006341;
+    @include border-radius(5px);
 }
 
 .icon {
@@ -21,5 +76,10 @@ input {
     position: relative;
     @include border-radius(2px);
     padding-left: 10px;
-    border: 1px solid #d6d6d6;
+    border: 2px solid #4a4540;
+    @include transition(border 500ms ease-out);
+
+    &.contains-errors {
+        border-color: red;
+    }
 }
