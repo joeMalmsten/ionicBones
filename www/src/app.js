@@ -2,7 +2,6 @@
 /*jslint node: true */
 'use strict';
 
-require('angular');
 require('ionic');
 require('./controllers/login/loginCtrl');
 

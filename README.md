@@ -20,6 +20,8 @@ Requirements:
 
 3. Have Ionic serve the app (--nobrowser since browser-sync creates a better tab for development with fast live reloading. Without this flag 2 tabs will be made.)
 
+        $ gulp browserifyInit (since dist no longer exists by default. You can skip this and reload the page once ionic serve's browserify command finishes instead if you prefer)
+
         $ ionic serve --nobrowser
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.

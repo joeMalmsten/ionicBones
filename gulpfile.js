@@ -1,4 +1,4 @@
-/*global process, require __dirname*/
+/*global process, require*/
 'use strict';
 
 var gulp = require('gulp'),
@@ -20,7 +20,10 @@ var gulp = require('gulp'),
     paths = {
         sass: ['./**/*.scss'],
         src: ['./www/src/**/*.js'],
-        html: ["./www/views/**/*.html"]
+        html: ["./www/views/**/*.html"],
+        dist: "./www/dist",
+        app: './www/src/app.js',
+        css: './www/assets/css'
     },
     // wrote this since sass.logError was not handling errors properly and breaking
     handleError = function(error) {
@@ -38,11 +41,12 @@ var gulp = require('gulp'),
             .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
                // Add transformation tasks to the pipeline here.
             .pipe(sourcemaps.write('./')) // writes .map file
-            .pipe(gulp.dest('./www/dist'));
+            .pipe(gulp.dest(paths.dist));
+
     },
     // add custom browserify options here
     customOpts = {
-        entries: ['./www/src/app.js'],
+        entries: [paths.app],
         debug: true
     },
     opts = assign({}, watchify.args, customOpts),
@@ -51,7 +55,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['sass', 'lint', 'browserify']);
 
 gulp.task('lint', function() {
-    gulp.src(['./www/src/**/*.js'])
+    gulp.src(paths.src)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(jshint.reporter('fail'));
@@ -61,17 +65,33 @@ gulp.task('sass', function() {
     gulp.src('./scss/ionic.app.scss')
         .pipe(sass())
         .on('error', handleError)
-        .pipe(gulp.dest('./www/assets/css/'))
+        .pipe(gulp.dest(paths.css))
         .pipe(minifyCss({
             keepSpecialComments: 0
         }))
         .pipe(rename({extname: '.min.css'}))
-        .pipe(gulp.dest('./www/assets/css/'))
+        .pipe(gulp.dest(paths.css))
         .pipe(browserSync.stream());
 });
 
+// For an initial build since the browserify task watches for changes
+gulp.task('browserifyInit', function() {
+    // Single entry point to browserify
+    browserify(opts).bundle()
+        // log errors if they happen
+        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+        .pipe(vinylSource('bundle.js'))
+        // optional, remove if you don't need to buffer file contents
+        .pipe(buffer())
+        // optional, remove if you dont want sourcemaps
+        .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
+           // Add transformation tasks to the pipeline here.
+        .pipe(sourcemaps.write('./')) // writes .map file
+        .pipe(gulp.dest(paths.dist));
+});
 
-gulp.task('browserify', bundle); // so you can run `gulp js` to build the file
+// Uses watchify to only rebuild altered pieces of the bundle
+gulp.task('browserify', bundle);
 
 gulp.task('watch', function() {
     browserSync.init({
@@ -104,8 +124,6 @@ gulp.task('watchHtml', function() {
 gulp.task('sasswatch', function() {
     gulp.watch(paths.sass, ['sass']);
 });
-
-
 
 /**
 * Test task, run test once and exit
