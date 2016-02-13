@@ -1,7 +1,7 @@
 /*global require module angular*/
 /*jslint node: true */
 'use strict';
-require('./controllers/login/loginCtrl');
+require('./components/login/loginCtrl');
 
 module.exports = angular.module('ionicBones', [
     'ionic',

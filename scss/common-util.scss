@@ -71,15 +71,3 @@ h5, h6, input, span {
     height: 40px;
     width: 40px;
 }
-
-input {
-    position: relative;
-    @include border-radius(2px);
-    padding-left: 10px;
-    border: 2px solid #4a4540;
-    @include transition(border 500ms ease-out);
-
-    &.contains-errors {
-        border-color: red;
-    }
-}

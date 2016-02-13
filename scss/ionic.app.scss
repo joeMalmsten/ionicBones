@@ -27,5 +27,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .bonesApp {
     // Include all custom style and Ionic Overrides
     @import "scss/common-util";
-    @import "www/views/login/loginView";
+    @import "www/src/components/login/login";
+    @import "www/src/common/bonesInput/bonesInput";
 }

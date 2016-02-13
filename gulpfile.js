@@ -16,11 +16,12 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     assign = require('lodash').assign,
     karma = require('karma').server,
+    ngHtml2Js = require('browserify-ng-html2js'),
     browserSync = require('browser-sync').create(),
     paths = {
         sass: ['./**/*.scss'],
         src: ['./www/src/**/*.js'],
-        html: ["./www/views/**/*.html"],
+        html: ["./www/src/**/*.html"],
         dist: "./www/dist",
         app: './www/src/app.js',
         css: './www/assets/css'
@@ -31,7 +32,12 @@ var gulp = require('gulp'),
         this.emit('end');
     },
     bundle = function() {
-        return bundler.bundle()
+        return bundler
+            .transform(ngHtml2Js({
+                module: 'templates', // optional module name
+                extension: 'html' // optionally specify what file types to look for
+            }))
+            .bundle()
             // log errors if they happen
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(vinylSource('bundle.js'))
@@ -77,7 +83,12 @@ gulp.task('sass', function() {
 // For an initial build since the browserify task watches for changes
 gulp.task('browserifyInit', function() {
     // Single entry point to browserify
-    browserify(opts).bundle()
+    browserify(opts)
+        .transform(ngHtml2Js({
+            module: 'templates', // optional module name
+            extension: 'html' // optionally specify what file types to look for
+        }))
+        .bundle()
         // log errors if they happen
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(vinylSource('bundle.js'))

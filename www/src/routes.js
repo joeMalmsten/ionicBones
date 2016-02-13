@@ -8,7 +8,7 @@ module.exports = ['$stateProvider', '$urlRouterProvider',
 
         .state('login', {
             url: "/login",
-            templateUrl: "../views/login/loginView.html",
+            templateUrl: "../src/components/login/loginView.html",
             controller: 'LoginCtrl'
         });
         /*.state('app', {

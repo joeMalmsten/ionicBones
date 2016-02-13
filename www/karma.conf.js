@@ -13,9 +13,10 @@ module.exports = function(karma) {
 
         // list of files / patterns to load in the browser
         files: [
-            '../node_modules/angular/angular.min.js',
+            '../node_modules/angular/angular.js',
             '../node_modules/angular-mocks/angular-mocks.js',
             'test/**/*.spec.js'
+
         ],
 
         preprocessors: {
@@ -59,8 +60,15 @@ module.exports = function(karma) {
 
         // browserify configuration
         browserify: {
+            files: [
+                'test/**/*.spec.js'
+            ],
             debug: true,
             transform: [
+                ['browserify-ng-html2js', {
+                    module: 'templates',
+                    extension: 'html'
+                }],
                 'browserify-istanbul',
                 'brfs',
                 'browserify-shim'

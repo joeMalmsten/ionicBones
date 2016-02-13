@@ -1,0 +1,17 @@
+input {
+    position: relative;
+    @include border-radius(2px);
+    padding-left: 10px;
+    border: 1px solid #e6e0db;
+    background-color: #4a4540;
+    color: #e6e0db;
+    @include transition(border 500ms ease-out);
+
+    &:focus {
+        background-color: #e6e0db;
+        color: #000;
+    }
+    &.contains-errors {
+        border-color: red;
+    }
+}
