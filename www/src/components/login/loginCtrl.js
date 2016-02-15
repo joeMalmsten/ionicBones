@@ -36,13 +36,15 @@ loginModule = angular.module('ionicBones.login', ["ionicBones.input"])
     };
 
     $scope.submitLogin = function() {
-        if (self.mockLoginData.username === $scope.inputValues.username.value &&
-            self.mockLoginData.password === $scope.inputValues.password.value) {
-            $scope.displayErrorMessage = false;
-            self.inputElems.removeClass('contains-errors');
-        } else {
-            $scope.displayErrorMessage = true;
-            self.inputElems.addClass('contains-errors');
+        if ($scope.canSubmit()) {
+            if (self.mockLoginData.username === $scope.inputValues.username.value &&
+                self.mockLoginData.password === $scope.inputValues.password.value) {
+                $scope.displayErrorMessage = false;
+                self.inputElems.removeClass('contains-errors');
+            } else {
+                $scope.displayErrorMessage = true;
+                self.inputElems.addClass('contains-errors');
+            }
         }
     };
 

@@ -3,9 +3,23 @@ var safeApply = require("../../common/safeApply/safeApply");
 require("./bonesInput.html");
 
 angular.module('ionicBones.input', ['templates'])
-.controller('InputCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-    // Put any controller code here, e.g. when directives need to speak
-    //  with eachother
+.controller('InputCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
+    var self = this;
+    self.handleKeyUp = function(event) {
+        if (event.which === 13 && $scope.submitFunc) {
+            $scope.submitFunc();
+        } else if (event.which === 27) {
+            $scope.inputObject.value = "";
+            safeApply($scope);
+        }
+    };
+
+    $timeout(function() {
+        self.inputElem = $($element);
+
+        self.inputElem.keyup(self.handleKeyUp);
+    }, 0);
+
 }])
 .directive('bonesInput', ['$timeout', function($timeout) {
     return {
@@ -17,22 +31,6 @@ angular.module('ionicBones.input', ['templates'])
             placeholder: '@',
             inputObject: "=",
             submitFunc: '&'
-        },
-        link: function($scope, $element) {
-            var self = this;
-
-            $timeout(function() {
-                self.inputElem = $($element);
-
-                self.inputElem.keyup(function(event) {
-                    if (event.which === 13 && $scope.submitFunc) {
-                        $scope.submitFunc();
-                    } else if (event.which === 27) {
-                        $scope.inputObject.value = "";
-                        safeApply($scope);
-                    }
-                });
-            }, 0);
         }
     };
 }]);
