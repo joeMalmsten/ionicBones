@@ -31,7 +31,7 @@ describe('bonesInput', function() {
     //   templates module if the directive we are testing takes a template
     beforeEach(function() {
         angular.mock.module('templates');
-        angular.mock.module('ionicBones.input');
+        angular.mock.module('bones.input');
     });
 
     // Store references to $rootScope and $compile

@@ -2,10 +2,14 @@
 /*jslint node: true */
 'use strict';
 require('./components/login/loginCtrl');
+require('./components/dashboard/dashboardCtrl');
+require('./components/bonesNavbar/bonesNavbar');
 
-module.exports = angular.module('ionicBones', [
+module.exports = angular.module('bones', [
     'ionic',
-    'ionicBones.login'
+    'bones.navbar',
+    'bones.login',
+    'bones.dashboard'
 ])
 .config(require('./routes'))
 .run(require('./main'));

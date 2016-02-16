@@ -1,10 +1,6 @@
 <div class="login-page">
-    <div class="header">
-        <div class="icon logo"></div>
-        <h1 class="label" ng-bind="mockHeaderLabel"></h1>
-    </div>
     <div class="form-container login-page-form">
-        <h4 class="label" ng-bind="mockHeaderLabel"></h4>
+        <h4 class="label" ng-bind="mockLabel"></h4>
         <bones-input class="login-page-input" placeholder="Username" submit-func="submitLogin()" input-object="inputValues.username"></bones-input>
         <bones-input class="login-page-input" placeholder="Password" submit-func="submitLogin()" input-object="inputValues.password"></bones-input>
         <span class="label error-label" ng-bind="errorMessage" ng-class="{'active': displayErrorMessage}"></span>

@@ -1,8 +1,8 @@
-/*global angular module require*/
+/*global angular require*/
 var safeApply = require("../../common/safeApply/safeApply");
 require("./bonesInput.html");
 
-angular.module('ionicBones.input', ['templates'])
+angular.module('bones.input', ['templates'])
 .controller('InputCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
     var self = this;
     self.handleKeyUp = function(event) {

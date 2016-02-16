@@ -1,9 +1,10 @@
 // Karma configuration
 // Generated on Thu Feb 04 2016 13:24:43 GMT-0800 (PST)
-
+/*global require module*/
 'use strict';
 
 module.exports = function(karma) {
+    var istanbul = require('browserify-istanbul');
     karma.set({
 
         frameworks: [
@@ -23,10 +24,6 @@ module.exports = function(karma) {
         preprocessors: {
             'test/**/*.spec.js': ['browserify']
         },
-
-        // list of files to exclude
-        exclude: [
-        ],
 
         // test results reporter to use
         // possible values: 'dots', 'progress'

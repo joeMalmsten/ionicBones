@@ -1,4 +1,4 @@
-bonesApp Base using [Ionic](http://ionicframework.com) & [Browserify](http://browserify.org/)
+bones-app Base using [Ionic](http://ionicframework.com) & [Browserify](http://browserify.org/)
 =====================
 
 ## Using this project
@@ -14,7 +14,7 @@ Requirements:
 
 2. Install the node modules
 
-        $ cd bonesApp
+        $ cd bones-app
 
         $ npm install
 

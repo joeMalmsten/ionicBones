@@ -1,5 +1,5 @@
 {
-  "name": "bonesApp",
+  "name": "bones-app",
   "app_id": "",
   "gulpStartupTasks": [
     "lint",

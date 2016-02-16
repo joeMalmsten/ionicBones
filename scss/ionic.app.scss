@@ -24,9 +24,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // common sass mixins
 @import "scss/sass-mixins";
 
-.bonesApp {
+.bones-app {
     // Include all custom style and Ionic Overrides
     @import "scss/common-util";
     @import "www/src/components/login/login";
+    @import "www/src/components/dashboard/dashboard";
+    @import "www/src/components/bonesNavBar/bonesNavBar";
     @import "www/src/common/bonesInput/bonesInput";
 }

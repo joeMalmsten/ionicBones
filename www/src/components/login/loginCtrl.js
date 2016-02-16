@@ -6,8 +6,8 @@ var loginModule,
 
 require('../../common/bonesInput/bonesInput');
 
-loginModule = angular.module('ionicBones.login', ["ionicBones.input"])
-.controller('LoginCtrl', ['$scope', '$timeout', function($scope, $timeout) {
+loginModule = angular.module('bones.login', ["bones.input"])
+.controller('LoginCtrl', ['$scope', '$state', '$timeout', function($scope, $state, $timeout) {
     // This is only needed for possible callbacks, but I still
     //  prefer to set it for consistency whenever I need to use 'this'
     var self = this,
@@ -19,11 +19,11 @@ loginModule = angular.module('ionicBones.login', ["ionicBones.input"])
      *        you don't want private variables tested
      */
     self.mockLoginData = {
-        username: 'joeM',
-        password: 'admin'
+        username: 'admin',
+        password: 'password'
     };
 
-    $scope.mockHeaderLabel = "This is a mock label.";
+    $scope.mockLabel = "This is a mock label.";
     $scope.errorMessage = "Login information is incorrect.";
     $scope.displayErrorMessage = false;
     $scope.inputValues = {
@@ -41,6 +41,7 @@ loginModule = angular.module('ionicBones.login', ["ionicBones.input"])
                 self.mockLoginData.password === $scope.inputValues.password.value) {
                 $scope.displayErrorMessage = false;
                 self.inputElems.removeClass('contains-errors');
+                $state.go('dashboard');
             } else {
                 $scope.displayErrorMessage = true;
                 self.inputElems.addClass('contains-errors');
