@@ -1,4 +1,4 @@
-/*global process, require*/
+/*global process, require __dirname*/
 'use strict';
 
 var gulp = require('gulp'),

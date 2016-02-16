@@ -1,15 +1,8 @@
 /*global require module angular*/
 /*jslint node: true */
 'use strict';
-require('./components/login/loginCtrl');
-require('./components/dashboard/dashboardCtrl');
-require('./components/bonesNavbar/bonesNavbar');
+require('./baseModules');
 
-module.exports = angular.module('bones', [
-    'ionic',
-    'bones.navbar',
-    'bones.login',
-    'bones.dashboard'
-])
+module.exports = angular.module('bones', ['baseModules'])
 .config(require('./routes'))
 .run(require('./main'));
