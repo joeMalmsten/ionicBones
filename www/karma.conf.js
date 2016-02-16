@@ -7,6 +7,19 @@ module.exports = function(karma) {
     var istanbul = require('browserify-istanbul');
     karma.set({
 
+
+
+        logLevel: karma.LOG_DEBUG,
+        singleRun: true,
+        autoWatch: false,
+        // web server port
+        port: 9876,
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
+        // Concurrency level
+        // how many browser should be started simultaneous
+        concurrency: Infinity,
+
         frameworks: [
             'jasmine',
             'browserify'
@@ -28,7 +41,16 @@ module.exports = function(karma) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        reporters: ['spec', 'coverage'],
+
+        specReporter: {
+            maxLogLines: 10,         // limit number of lines logged per test
+            suppressErrorSummary: false,  // do not print error summary
+            suppressFailed: false,  // do not print information about failed tests
+            suppressPassed: false,  // do not print information about passed tests
+            suppressSkipped: false  // do not print information about skipped tests
+        },
+
 
         // optionally, configure the reporter
         coverageReporter: {
@@ -36,25 +58,9 @@ module.exports = function(karma) {
             dir: '../coverage/'
         },
 
-        // web server port
-        port: 9876,
-
-
-        // enable / disable colors in the output (reporters and logs)
-        colors: true,
-
-        // Concurrency level
-        // how many browser should be started simultaneous
-        concurrency: Infinity,
-
         browsers: [
             'Chrome'
         ],
-
-        logLevel: karma.LOG_DEBUG,
-
-        singleRun: true,
-        autoWatch: false,
 
         // browserify configuration
         browserify: {

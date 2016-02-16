@@ -6,9 +6,9 @@
 //  the visibility of untested files.
 require('../src/baseModules');
 
-describe('Reality is working, on the app', function() {
-    beforeEach(angular.mock.module('bones'));
-    it('has a truth that is true', function() {
+describe('Pull in all the base dependencies', function() {
+    beforeEach(angular.mock.module('baseModules'));
+    it('will not die when trying to pull in all known dependencies', function() {
         expect(true).toBe(true);
     });
 });

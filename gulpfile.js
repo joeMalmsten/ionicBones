@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     bower = require('bower'),
     sass = require('gulp-sass'),
-    minifyCss = require('gulp-minify-css'),
+    cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
     sh = require('shelljs'),
     jshint = require('gulp-jshint'),
@@ -72,7 +72,7 @@ gulp.task('sass', function() {
         .pipe(sass())
         .on('error', handleError)
         .pipe(gulp.dest(paths.css))
-        .pipe(minifyCss({
+        .pipe(cssnano({
             keepSpecialComments: 0
         }))
         .pipe(rename({extname: '.min.css'}))
