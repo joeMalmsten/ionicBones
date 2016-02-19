@@ -1,0 +1,18 @@
+<table class="app-table">
+    <thead>
+        <tr>
+            <th ng-repeat="col in tableColumns" ng-click="sortTableBy(col)">{{col}}
+            <span class="sort-order" ng-class="{ 'reverse-order': isSortingBy(col) === -1, 'active' : isSortingBy(col)}"></span>
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in tableData | orderBy:predicate">
+            <td ng-repeat="col in tableColumns">
+                <div ng-if="!row[col].html">{{row[col]}}</div>
+                <div ng-if="row[col].html" app-bind-html-compile="row[col].html">{{row[col]}}</div>
+            </td>
+        </tr>
+    </tbody>
+</table>

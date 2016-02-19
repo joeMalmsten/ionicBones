@@ -1,11 +1,8 @@
 /*global require module angular*/
 /*jslint node: true */
 'use strict';
-require('./controllers/login/loginCtrl');
+require('./baseModules');
 
-module.exports = angular.module('RAS', [
-    'ionic',
-    'RAS.login'
-])
+module.exports = angular.module('app', ['baseModules'])
 .config(require('./routes'))
 .run(require('./main'));

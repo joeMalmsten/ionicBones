@@ -24,8 +24,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // common sass mixins
 @import "scss/sass-mixins";
 
-.RAS-app {
+.my-app {
     // Include all custom style and Ionic Overrides
     @import "scss/common-util";
-    @import "www/views/login/loginView";
+    @import "www/src/components/login/login";
+    @import "www/src/components/dashboard/dashboard";
+    @import "www/src/components/appHeader/appHeader";
+    @import "www/src/common/appInput/appInput";
+    @import "www/src/common/appFlyout/appFlyout";
+    @import "www/src/common/appTable/appTable";
 }

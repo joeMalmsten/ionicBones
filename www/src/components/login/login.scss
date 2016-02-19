@@ -4,31 +4,10 @@
     height: 100%;
     background-color: #E6E0DB;
 
-    .header {
-        height: 50px;
-        width: 100%;
-        text-align: center;
-
-        .label {
-            float: left;
-            margin-left: 10px;
-            margin-top: 5px;
-        }
-
-        .icon {
-            float: left;
-            margin: 5px 10px;
-
-            &.logo {
-                background-image: url("../img/starbucks-icon.png");
-            }
-        }
-    }
-
     .login-page-form {
         position: absolute;
         transform: translate(-50%, -30%);
-        top: 50%;
+        top: 35%;
         left: 50%;
         width: 300px;
         text-align: center;

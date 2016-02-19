@@ -1,4 +1,4 @@
-RAS-App Base using [Ionic](http://ionicframework.com) & [Browserify](http://browserify.org/)
+app Base using [Ionic](http://ionicframework.com) & [Browserify](http://browserify.org/)
 =====================
 
 ## Using this project
@@ -14,7 +14,7 @@ Requirements:
 
 2. Install the node modules
 
-        $ cd RAS-App
+        $ cd app-App
 
         $ npm install
 

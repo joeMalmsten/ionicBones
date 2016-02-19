@@ -5,11 +5,15 @@ module.exports = ['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
 
-
         .state('login', {
             url: "/login",
-            templateUrl: "../views/login/loginView.html",
+            templateUrl: "../src/components/login/loginView.html",
             controller: 'LoginCtrl'
+        })
+        .state('dashboard', {
+            url: "/dashboard",
+            templateUrl: "../src/components/dashboard/dashboardView.html",
+            controller: 'DashboardCtrl'
         });
         /*.state('app', {
             url: "/app",

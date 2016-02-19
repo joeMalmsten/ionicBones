@@ -1,0 +1,34 @@
+.dashboard-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #E6E0DB;
+    .dashboard-table-view {
+        position: relative;
+        margin: 5%;
+
+        width: 90%;
+        .dashboard-table {
+            position: absolute;
+            width: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &.active, &.next, &.prev {
+                @include transition(all 500ms ease-out);
+            }
+            &.next {
+                left: 130%;
+                @include opacity(0.25);
+                @include transition(all 500ms ease-out);
+            }
+            &.prev {
+                left: -30%;
+                @include opacity(0.25);
+            }
+        }
+        #estimated-revenue-table {
+            width: 70%;
+        }
+    }
+}

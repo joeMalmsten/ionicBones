@@ -15,7 +15,7 @@ $ultra-bold-font: 900;
 
 // Keep this at the highest level so any below identifiers can overwrite the
 //  color.
-span, header, h1, h2, h3, h4, h5, h6, input, .button {
+span, header, h1, h2, h3, h4, h5, h6, input, td, th, .button {
     color: #3d3935;
     font-family: Avenir Next, Lato Sans, Helvetica;
 }
@@ -24,17 +24,16 @@ h1, h2, h3, h4, h5, h6, header {
     margin: 0;
 }
 
-header, h1, h2, h3, h4, .button {
+header, h1, h2, h3, h4, th, .button {
     font-weight: $demi-bold-font;
 }
 
-h5, h6, input, span {
+h5, h6, input, td, span {
     font-weight: $medium-font;
 }
 
 .button {
-    width: 80px;
-    height: 25px;
+    min-width: 80px;
     min-height: 25px;
     line-height: 15px;
     font-size: 12px;
@@ -58,10 +57,6 @@ h5, h6, input, span {
     }
 }
 
-.header {
-    background-color: #006341;
-}
-
 .form-container {
     background-color: #006341;
     @include border-radius(5px);
@@ -70,16 +65,4 @@ h5, h6, input, span {
 .icon {
     height: 40px;
     width: 40px;
-}
-
-input {
-    position: relative;
-    @include border-radius(2px);
-    padding-left: 10px;
-    border: 2px solid #4a4540;
-    @include transition(border 500ms ease-out);
-
-    &.contains-errors {
-        border-color: red;
-    }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "RAS-App",
+  "name": "app-App",
   "app_id": "",
   "gulpStartupTasks": [
     "lint",
