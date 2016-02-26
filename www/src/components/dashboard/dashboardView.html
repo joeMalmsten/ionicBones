@@ -1,11 +1,43 @@
 <div class="dashboard-page">
-    <div class="dashboard-nav"></div>
-    <div class="dashboard-table-view">
-        <app-table id="estimated-revenue-table" class="dashboard-table"
-            table-data="mockTableData"
-            table-columns="mockTableColumns"
-            available-options="availableOptions">
-        </app-table>
+    <div class="dashboard-nav">
+        <h4 class="bar-label" ng-bind="pageTitle"></h4>
+        <h6 class="bar-label small" ng-bind="mockBreadcrumb"></h6>
     </div>
-    <div class="button" app-flyout dont-hide-on-select=true custom-flyout="mockFlyout.html" container=".dashboard-page">Click me!!!</div>
+    <div class="dashboard-side-bar">
+        <div class="icon home">
+            <div class="ion-ios-home"></div>
+            <div class="ion-ios-home-outline"></div>
+        </div>
+
+    </div>
+    <div class="dashboard-content">
+        <div class="dashboard-table-pager">
+            <div class="button dashboard-nav-btn" ng-repeat="table in tables track by $index" ng-click="setActiveTable($index)">
+                <h5 class="nav-btn-title" ng-bind="table.title"></h5>
+                <h4 class="nav-btn-data-count">{{table.tableData.length}}</h4>
+            </div>
+        </div>
+        <div class="dashboard-table-content">
+            <div class="dashboard-table-todo">
+                <div class="todo-header">
+                    <h2 class="todo-title">Todo: </h2>
+                    <h2 class="todo-rows" ng-bind="totalRows"></h2>
+                </div>
+                <div class="todo-body">
+                    <div ng-repeat="table in tables track by $index" class="todo-table-block" ng-click="setActiveTable($index)">
+                        <h4 class="todo-title" ng-bind="table.title"></h4>
+                        <h4 class="todo-rows">{{table.tableData.length}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-table-view">
+                <div ng-repeat="table in tables track by $index" class="dashboard-table-container" ng-class="{'prev': $index < activeIndex, 'next': $index > activeIndex}" >
+                    <h3 class="dashboard-table-title" ng-bind="table.title"></h3>
+                    <div class="dashboard-table" >
+                        <app-table paging-type="scrollable-paging" table-config="table"></app-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

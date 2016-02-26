@@ -11,9 +11,12 @@ angular.module('app.input', ['templates'])
         if (event.which === 13 && $scope.submitFunc) {
             $scope.submitFunc();
         } else if (event.which === 27) {
-            $scope.inputObject.value = "";
-            safeApply($scope);
+            $scope.clearInput();
         }
+    };
+
+    $scope.clearInput = function() {
+        $scope.inputObject.value = "";
     };
 
     $timeout(function() {
@@ -30,9 +33,13 @@ angular.module('app.input', ['templates'])
         templateUrl: "appInput.html",
         controller: "InputCtrl",
         scope: {
-            placeholder: '@',
             inputObject: "=",
-            submitFunc: '&'
+            placeholder: '@?',
+            readonly: '=?',
+            transparent: '=?',
+            submitFunc: '&?',
+            customClass: '@?',
+            prefix: "@?"
         }
     };
 }]);

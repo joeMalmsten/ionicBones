@@ -3,32 +3,223 @@
     width: 100%;
     height: 100%;
     background-color: #E6E0DB;
-    .dashboard-table-view {
-        position: relative;
-        margin: 5%;
+    .dashboard-nav {
+        position: absolute;
+        height: 30px;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        background-color: #E6E0DB;
+        border: 1px solid #ccc;
 
-        width: 90%;
-        .dashboard-table {
-            position: absolute;
-            width: 70%;
-            left: 50%;
-            transform: translateX(-50%);
+        z-index: 1;
+    }
+    .dashboard-side-bar {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        bottom: 0px;
+        width: 50px;
+        background-color: #f7f7f7;
+        border-right: 1px solid #ccc;
+        text-align: center;
+        z-index: 1;
 
-            &.active, &.next, &.prev {
-                @include transition(all 500ms ease-out);
-            }
-            &.next {
-                left: 130%;
-                @include opacity(0.25);
-                @include transition(all 500ms ease-out);
-            }
-            &.prev {
-                left: -30%;
-                @include opacity(0.25);
+        .icon {
+            position: relative;
+            display: inline-block;
+            font-size: 40px;
+            margin-top: 20px;
+
+            &.home {
+                margin-top: 20px;
+                margin-bottom: 40px;
+
+                .ion-ios-home {
+                    @include transition(opacity 300ms ease-out);
+                }
+
+
+                .ion-ios-home-outline {
+                    margin-top: -40px;
+                }
+
+                &:hover {
+                    .ion-ios-home {
+                        @include opacity(0);
+                    }
+                }
             }
         }
-        #estimated-revenue-table {
-            width: 70%;
+    }
+    .dashboard-content {
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 0;
+
+        .dashboard-table-pager {
+            position:: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100px;
+            width: 100%;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+
+            .dashboard-nav-btn {
+                display: inline-block;
+                height: 60px;
+                width: 120px;
+                margin: 20px 10px;
+                .nav-btn-title {
+                    position: absolute;
+                    font-weight: $demi-bold-font;
+                    width: 100px;
+                    left: 5px;
+                    top: 5px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                .nav-btn-data-count {
+                    position: absolute;
+                    top: 25px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        .dashboard-table-content {
+            position: absolute;
+            top: 120px;
+            bottom: 20px;
+            left: 20px;
+            right: 5px;
+            .dashboard-table-todo {
+                position: absolute;
+                background-color: #f7f7f7;
+                width: 240px;
+                top: 0px;
+                bottom: 5px;
+                @include border-radius(3px);
+                border: 1px solid #ccc;
+
+                .todo-header {
+                    margin: 20px;
+                    width: 200px;
+                    height: 50px;
+                    h2 {
+                        display: inline-block;
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                    border-bottom: 1px solid #ccc;
+
+                }
+                .todo-body {
+                    margin: 25px;
+                    width: 190px;
+                    .todo-table-block {
+                        height: 40px;
+                        cursor: pointer;
+                        @include transition(all 500ms ease-out);
+
+                        &:hover {
+                            background-color: #e6e0db;
+                        }
+
+                        .todo-title, .todo-rows {
+                            margin-top: 10px;
+                        }
+
+                        h5 {
+                            display: inline-block;
+                            height: 25px;
+                            line-height: 25px;
+                        }
+                        border-bottom: 1px solid #ccc;
+                    }
+
+                }
+
+                .todo-title {
+                    float: left;
+                    max-width: 120px;
+                    margin-left: 5px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .todo-rows {
+                    float: right;
+                    margin-right: 5px;
+                    max-width: 60px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    background-color: #E6E0DB;
+                    border: 1px solid #c2c2c2;
+                    @include border-radius(5px);
+                }
+            }
+            .dashboard-table-view {
+                position: absolute;
+                background-color: #f7f7f7;
+                top: 0px;
+                bottom: 5px;
+                left: 260px;
+                right: 20px;
+                min-width: 840px;
+                @include border-radius(3px);
+                border: 1px solid #ccc;
+
+                .dashboard-table-title {
+                    position: absolute;
+                    top: 10px;
+                    height: 30px;
+                }
+                .dashboard-table-container {
+                    position: absolute;
+                    height: 100%;
+                    width: 90%;
+                    left: 50%;
+                    top: 0%;
+                    transform: translateX(-50%);
+                    @include transition(all 500ms ease-out);
+
+                    .dashboard-table {
+                        position: absolute;
+                        top: 50px;
+                        bottom: 0px;
+                        width: 100%;
+                        .table-filter-container, .table-row-view-details {
+                            @include opacity(1);
+                            @include transition(all 500ms ease-out);
+                        }
+
+                    }
+
+                    &.next {
+                        left: 150%;
+                    }
+                    &.prev {
+                         top: 150%;
+                    }
+
+                    &.prev, &.next {
+                        @include opacity(0);
+                        .dashboard-table {
+                            .table-filter-container, .table-row-view-details{
+                                @include opacity(0);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ angular.module('app.header', ['templates'])
     var self = this;
     self.isLoggedIn = false;
     $scope.mockLabel = "app header";
+    $scope.userName = "Test User";
 
     $scope.redirectToDashboard = function() {
         if (self.isLoggedIn) {

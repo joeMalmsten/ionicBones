@@ -1,18 +1,84 @@
-<table class="app-table">
-    <thead>
-        <tr>
-            <th ng-repeat="col in tableColumns" ng-click="sortTableBy(col)">{{col}}
-            <span class="sort-order" ng-class="{ 'reverse-order': isSortingBy(col) === -1, 'active' : isSortingBy(col)}"></span>
-            </th>
+<div class="table-container" ng-class="{'basic-table': !pagingType || pagingType === 'basic'}">
+    <div class="table-content">
+        <div class="table-filter-container">
+            <span class="filter-dropdown" app-flyout
+                items="tableColumns"
+                current-item="filter.column.value"
+                on-select="handleFilterChange($event, item)">
+                    <app-input
+                        custom-class="filter-column"
+                        readonly=true
+                        input-object=filter.column
+                        placeholder="Filter column">
+                    </app-input>
+            </span>
+            <app-input class="filter-input" placeholder="filter input" input-object="filter.input"></app-input>
+        </div>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="row in tableData | orderBy:predicate">
-            <td ng-repeat="col in tableColumns">
-                <div ng-if="!row[col].html">{{row[col]}}</div>
-                <div ng-if="row[col].html" app-bind-html-compile="row[col].html">{{row[col]}}</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <div class="table-overflow-manager">
+            <!-- basic table -->
+            <table class="app-table" ng-if="::(!pagingType || pagingType === 'basic')">
+                <thead>
+                    <tr>
+                        <th ng-repeat="col in tableColumns" ng-click="sortTableBy(col)">
+                        <span class="column-name">{{col}}</span>
+                        <span class="sort-order" ng-class="{ 'reverse-order': isSortingBy(col) === -1, 'active' : isSortingBy(col)}"></span>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-class-even="'even-row'" ng-repeat="row in filteredRows | startFrom: pager.currentIndex | limitTo: pager.pageSize.value | orderBy:predicate">
+                        <td ng-repeat="col in tableColumns">
+                            <span ng-if="::(!row[col].html && !row[col].editable)" class="cell-data">{{row[col]}}</span>
+                            <app-input ng-if="::(!row[col].html && row[col].editable)" class="table-cell-input" input-object="row[col]"></app-input>
+                            <div ng-if="::row[col].html" app-bind-html-compile="row[col].html"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- end basic table -->
+
+            <!-- scrollable table -->
+            <div class="app-table is-scrollable loading" ng-if="::(pagingType === 'scrollable' || pagingType === 'scrollable-paging')">
+                <div class="app-thead">
+                    <div class="app-tr">
+                        <div class="app-th" data-col-header="{{::col}}" ng-repeat="col in tableColumns" ng-click="sortTableBy(col)">
+                            <span class="column-name">{{col}}</span>
+                            <span class="sort-order" ng-class="{ 'reverse-order': isSortingBy(col) === -1, 'active' : isSortingBy(col)}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-tbody">
+                    <div class="tbody-rows">
+                        <div class="app-tr" ng-repeat="row in tableData | orderBy:predicate">
+                            <div class="app-td" data-col-header="{{::col}}" ng-repeat="col in tableColumns">
+                                <span ng-if="::(!row[col].html && !row[col].editable)" class="cell-data">{{row[col]}}</span>
+                                <app-input ng-if="::(!row[col].html && row[col].editable)" class="table-cell-input" input-object="row[col]" custom-class="small"></app-input>
+                                <div ng-if="::row[col].html" app-bind-html-compile="row[col].html"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- end scrollable table -->
+        </div>
+        <div class="table-row-view-details">
+            <div class="table-pager-container" ng-if="::(!pagingType || pagingType === 'basic' || pagingType === 'scrollable-paging')">
+                <span ng-if="::selectablePageSize" class="pager-dropdown" app-flyout items="pager.availPageSizes" on-select="calculatePageCount(item)">
+                    <app-input
+                        custom-class="page-size"
+                        readonly=true
+                        input-object=pager.pageSize
+                        placeholder="Page size">
+                    </app-input>
+                </span>
+                <span>Page: </span>
+                <span class="page" ng-class="{'active': n === (pager.currentPage + 1)}" ng-repeat="n in [] | range: pager.pageCount" ng-click="selectPage(n - 1);">{{n}}</span>
+            </div>
+            <div class="table-scroller-row-counter" ng-if="::(pagingType === 'scrollable' || pagingType === 'scrollable-paging')">
+                <span>Currently viewing row {{visibleRowsStartIndex}} to row {{visibleRowsEndIndex}} of {{rowCount}} rows</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -24,12 +24,23 @@ h1, h2, h3, h4, h5, h6, header {
     margin: 0;
 }
 
-header, h1, h2, h3, h4, th, .button {
+header, h1, h2, h3, h4, th, .app-th, .button {
     font-weight: $demi-bold-font;
 }
 
-h5, h6, input, td, span {
+h5, h6, input, td, .app-td, span {
     font-weight: $medium-font;
+}
+
+.view-container {
+    top: 30px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    // This will overwrite ionics 100% height/width
+    height: initial;
+    width: initial;
 }
 
 .button {
@@ -43,6 +54,10 @@ h5, h6, input, td, span {
     background-color: #4a4540;
     color: #e6e0db;
 
+    span, header, h1, h2, h3, h4, h5, h6, input, td, th, .button {
+        color: #e6e0db;
+    }
+
     &:hover {
         background-color: #33302c;
         border-color: #4a4540;
@@ -50,6 +65,10 @@ h5, h6, input, td, span {
 
     &:active {
         color: #898076;
+
+        span, header, h1, h2, h3, h4, h5, h6, input, td, th, .button {
+            color: #898076;
+        }
     }
 
     &.inactive {
@@ -62,7 +81,15 @@ h5, h6, input, td, span {
     @include border-radius(5px);
 }
 
-.icon {
-    height: 40px;
-    width: 40px;
+.bar-label {
+    float: left;
+    margin: 4px 10px 0px 10px;
+
+    &.small {
+        margin: 8px 10px 0px 10px;
+    }
+
+    &.right-align {
+        float: right;
+    }
 }

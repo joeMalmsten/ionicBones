@@ -12,10 +12,6 @@
         width: 300px;
         text-align: center;
 
-        input {
-            margin: 5px 75px;
-        }
-
         .label {
             display: inline-block;
             width: 200px;
@@ -27,6 +23,9 @@
                     @include opacity(1);
                 }
             }
+        }
+        .login-page-input {
+            margin-top: 10px;
         }
 
         .button {

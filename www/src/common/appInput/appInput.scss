@@ -1,15 +1,61 @@
-input {
+.app-input {
+    display: inline-block;
     position: relative;
     @include border-radius(2px);
-    padding-left: 10px;
-    border: 1px solid #e6e0db;
-    background-color: #4a4540;
-    color: #e6e0db;
-    @include transition(border 500ms ease-out);
+    background-color: #e9e9e9;
+    border: 1px solid #c3c3c3;
+    padding: 2px;
+    @include transition(all 300ms ease-out);
 
+    input {
+        height: 100%;
+        border: none;
+        display: inline-block;
+        padding-left: 5px;
+        background-color: transparent;
+    }
+
+    .clear-button {
+        display: inline-block;
+        margin-right: 5px;
+        color: #ccc;
+        @include transition(color 300ms ease-out);
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    .prefix {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    &.transparent {
+        border: none;
+        background-color: transparent;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &.small {
+        padding: 0px;
+        input {
+            width: 75px;
+            padding-left: 3px;
+        }
+    }
+
+    &:hover {
+        background-color: #f7f7f7;
+    }
     &:focus {
-        background-color: #e6e0db;
-        color: #000;
+        background-color: #fff;
+        border-color: #000;
+    }
+    &:read-only {
+        cursor: pointer;
     }
     &.contains-errors {
         border-color: red;

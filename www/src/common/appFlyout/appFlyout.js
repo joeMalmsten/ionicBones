@@ -69,6 +69,14 @@ angular.module('app.flyout', ['templates'])
         console.log("Hit default on select!", item);
     }
 
+    $scope.selectItem = function (event, item) {
+        $scope.currentItem = item;
+        $scope.onSelect({
+            event: event,
+            item: item
+        });
+    };
+
     if (!$scope.onSelect) {
         $scope.onSelect = defaultSelect;
     }
@@ -114,7 +122,7 @@ angular.module('app.flyout', ['templates'])
             onSelect: '&?',
             container: '@',
             items: '=',
-            curentItem: '=?',
+            currentItem: '=?',
             dontHideOnSelect: '=?',
             options: '@'
         },

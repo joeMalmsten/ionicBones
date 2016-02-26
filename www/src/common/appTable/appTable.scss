@@ -1,44 +1,166 @@
-.app-table {
-    @include border-radius(3px);
-    overflow: hidden;
-    text-align: left;
-    tr {
-        background-color: white;
-        border: 1px solid #ccc;
+.table-container {
+    height: 100%;
+    width: 100%;
+    min-width: 600px;
 
-        th, td {
-            @include transition(all 300ms ease-out);
-            padding: 3px;
-        }
+    .table-content {
+        height: 100%;
 
-        th {
-            background-color: #F7F7F7;
+        .table-filter-container {
+            position: absolute;
+            top: 10px;
+            height: 40px;
+            z-index: 1;
 
-            &:hover {
-                background-color: #e6e0db;
+            .current {
+                height: 100%;
+                .filter-column {
+                    margin-top: -1px;
+                }
             }
-            .sort-order {
+            .filter-column, .filter-input {
+                min-height: 25px;
                 display: inline-block;
-                width: 20px;
-                @include opacity(0.0);
+            }
+        }
+        .table-row-view-details {
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            bottom: 10px;
 
-                &.active {
-                    @include opacity(1.0);
-                }
-                &:after {
-                    content: '\25b2';
-                }
+            .table-pager-container {
+                display: inline-block;
+                float: left;
+                margin-right: 20px;
 
-                &.reverse-order {
-                    &:after {
-                        content: '\25bc';
+                .pager-dropdown {
+                    display: inline-block;
+                }
+                .page {
+                    margin: 0px 5px;
+                    text-decoration: underline;
+                    cursor: pointer;
+
+                    &.active {
+                        text-decoration: none;
+                        font-weight: $demi-bold-font;
                     }
                 }
             }
+            .table-scroller-row-counter {
+                display: inline-block;
+                float: left;
+                margin-right: 20px;
+            }
         }
-        td {
-            &:hover {
-                background-color: #e6e0db;
+        .table-overflow-manager {
+            position: absolute;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            top: 60px;
+            bottom: 60px;
+
+            .app-table {
+                position: relative;
+                height: 100%;
+                display: inline-block;
+                @include border-radius(3px);
+                overflow: hidden;
+                text-align: left;
+                @include opacity(1);
+                @include transition(all 300ms ease-out);
+
+                &.is-scrollable {
+
+                    .app-tbody {
+                        height: 90%;
+                        overflow: auto;
+                    }
+                }
+
+                &.loading {
+                    @include opacity(0);
+                }
+
+                .app-tr {
+                    @include transition(all 300ms ease-out);
+                    display: block;
+                    white-space: nowrap;
+                }
+                .app-tr, tr {
+                    height: 100%;
+                    background-color: white;
+                    border: 1px solid #ccc;
+                    @include opacity(1);
+
+                    &.filtered {
+                        height: 0px;
+                        @include opacity(0);
+                        border: none;
+                        .app-td {
+                            display: none;
+                        }
+                    }
+
+                    &.even-row {
+                        background-color: #f7f7f7;
+                    }
+
+                    .app-td {
+                        display: table-cell;
+                    }
+                    .app-th, .app-td, th, td {
+                        @include transition(all 300ms ease-out);
+                        padding: 3px;
+                        .cell-data {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                    .app-th {
+                        display: inline-block;
+                        white-space: nowrap;
+                        height: 100%;
+                    }
+                    .app-th, th {
+                        background-color: #e9e9e9;
+                        cursor: pointer;
+
+                        .sort-order {
+                            @include opacity(0.0);
+
+                            &.active {
+                                @include opacity(1.0);
+                            }
+                            &:after {
+                                width: 14px;
+                                content: '\25b2';
+                            }
+
+                            &.reverse-order {
+                                &:after {
+                                    content: '\25bc';
+                                }
+                            }
+                        }
+                    }
+
+                    .app-th, th, .app-td, td {
+                        &:hover {
+                            background-color: #e6e0db;
+                        }
+                    }
+                }
+
+                span {
+                    white-space: nowrap;
+                }
             }
         }
     }
