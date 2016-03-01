@@ -1,10 +1,9 @@
 // Karma configuration
 // Generated on Thu Feb 04 2016 13:24:43 GMT-0800 (PST)
-/*global require module*/
+/*global module*/
 'use strict';
 
 module.exports = function(karma) {
-    var istanbul = require('browserify-istanbul');
     karma.set({
 
 

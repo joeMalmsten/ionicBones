@@ -6,13 +6,13 @@ module.exports = ['$stateProvider', '$urlRouterProvider',
         $stateProvider
 
         .state('login', {
-            url: "/login",
-            templateUrl: "../src/components/login/loginView.html",
+            url: '/login',
+            templateUrl: '../src/components/login/loginView.html',
             controller: 'LoginCtrl'
         })
         .state('dashboard', {
-            url: "/dashboard",
-            templateUrl: "../src/components/dashboard/dashboardView.html",
+            url: '/dashboard',
+            templateUrl: '../src/components/dashboard/dashboardView.html',
             controller: 'DashboardCtrl'
         });
         /*.state('app', {

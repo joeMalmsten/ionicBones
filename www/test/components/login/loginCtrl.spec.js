@@ -34,7 +34,7 @@ describe('LoginCtrl', function() {
             $controller('LoginCtrl', {$scope: $scope});
         });
 
-        it ("return false if there is no username set", function() {
+        it ('return false if there is no username set', function() {
             // Given
             $scope.inputValues.username.value = '';
             $scope.inputValues.password.value = 'password';
@@ -44,7 +44,7 @@ describe('LoginCtrl', function() {
             expect($scope.canSubmit()).not.toBeTruthy();
         });
 
-        it ("return false if there is no password set", function() {
+        it ('return false if there is no password set', function() {
             // Given
             $scope.inputValues.username.value = 'admin';
             $scope.inputValues.password.value = '';
@@ -54,7 +54,7 @@ describe('LoginCtrl', function() {
             expect($scope.canSubmit()).not.toBeTruthy();
         });
 
-        it ("return true if both fields are sett", function() {
+        it ('return true if both fields are set', function() {
             // Given
             $scope.inputValues.username.value = 'admin';
             $scope.inputValues.password.value = 'password';
@@ -76,9 +76,9 @@ describe('LoginCtrl', function() {
                     this.className = className;
                 },
                 removeClass: function(className) {
-                    this.className.replace("/" + className + "/g", "");
+                    this.className.replace('/' + className + '/g', '');
                 },
-                className: ""
+                className: ''
             };
         });
 

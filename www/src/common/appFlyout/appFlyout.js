@@ -1,8 +1,8 @@
 /*global angular require*/
 'use strict';
 
-require("./appFlyout.html");
-require("./appDropdown.html");
+require('./appFlyout.html');
+require('./appDropdown.html');
 
 //TODO: Pull flyout specific code into a service so can can create flyouts
 // purely from JS without a directive.
@@ -19,8 +19,8 @@ angular.module('app.flyout', ['templates'])
                     targetTop = targetOffset.top + parseInt(targetElem.css('height')) - containerOffset.top;
 
                 flyoutElem.css({
-                    left: targetLeft + "px",
-                    top: targetTop + "px"
+                    left: targetLeft + 'px',
+                    top: targetTop + 'px'
                 });
             },
             initListeners: function(targetElem, containerElem, buttonElem, flyoutElem) {
@@ -66,7 +66,7 @@ angular.module('app.flyout', ['templates'])
 
 
     function defaultSelect(item) {
-        console.log("Hit default on select!", item);
+        console.log('Hit default on select!', item);
     }
 
     $scope.selectItem = function (event, item) {
@@ -114,9 +114,9 @@ angular.module('app.flyout', ['templates'])
 .directive('appFlyout', [function() {
     return {
         restrict: 'A',
-        templateUrl: "appFlyout.html",
-        transclude: "true",
-        controller: "FlyoutCtrl",
+        templateUrl: 'appFlyout.html',
+        transclude: 'true',
+        controller: 'FlyoutCtrl',
         scope: {
             customFlyout: '@',
             onSelect: '&?',
@@ -125,8 +125,6 @@ angular.module('app.flyout', ['templates'])
             currentItem: '=?',
             dontHideOnSelect: '=?',
             options: '@'
-        },
-        link: function($scope) {
         }
     };
 }]);

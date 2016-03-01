@@ -1,8 +1,8 @@
 /*global angular require*/
 'use strict';
 
-var safeApply = require("../../common/safeApply/safeApply");
-require("./appInput.html");
+var safeApply = require('../../common/safeApply/safeApply');
+require('./appInput.html');
 
 angular.module('app.input', ['templates'])
 .controller('InputCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
@@ -16,7 +16,8 @@ angular.module('app.input', ['templates'])
     };
 
     $scope.clearInput = function() {
-        $scope.inputObject.value = "";
+        $scope.inputObject.value = '';
+        safeApply($scope);
     };
 
     $timeout(function() {
@@ -30,16 +31,16 @@ angular.module('app.input', ['templates'])
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: "appInput.html",
-        controller: "InputCtrl",
+        templateUrl: 'appInput.html',
+        controller: 'InputCtrl',
         scope: {
-            inputObject: "=",
+            inputObject: '=',
             placeholder: '@?',
             readonly: '=?',
             transparent: '=?',
             submitFunc: '&?',
             customClass: '@?',
-            prefix: "@?"
+            prefix: '@?'
         }
     };
 }]);

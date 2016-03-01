@@ -10,7 +10,7 @@ describe('DashboardCtrl', function() {
         $controller = _$controller_;
     }));
 
-    it('Exists', inject(function($timeout) {
+    it('Exists', inject(function() {
         var $scope = {};
         var controller = $controller('DashboardCtrl', {$scope: $scope});
 

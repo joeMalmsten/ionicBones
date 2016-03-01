@@ -4,20 +4,20 @@ require('../../../src/common/appInput/appInput.js');
 describe('appInput', function() {
     var $compile,
         $rootScope,
-        mockPlaceholder = "mockPlaceholder",
+        mockPlaceholder = 'mockPlaceholder',
         mockInputObject = {
-            value: ""
+            value: ''
         },
         hitSubmitFunc = false,
-        mockString = "this is some fake data",
+        mockString = 'this is some fake data',
         mockSubmitFunction = function() {
             hitSubmitFunc = true;
         },
-        mockDirectiveString = "<app-input " +
-                                  "placeholder='mockPlaceholder' " +
-                                  "input-object='mockInputObject' " +
-                                  "submit-func='mockSubmitFunction()'>" +
-                              "</app-input>",
+        mockDirectiveString = '<app-input ' +
+                                  'placeholder="mockPlaceholder" ' +
+                                  'input-object="mockInputObject"' +
+                                  'submit-func="mockSubmitFunction()">' +
+                              '</app-input>',
         element = angular.element(mockDirectiveString),
         directiveElem,
         scope,
@@ -60,17 +60,17 @@ describe('appInput', function() {
 
         // The controller can only be pulled out of the corresponding angular
         //  I set element above.
-        directiveCtrl = element.controller("appInput");
+        directiveCtrl = element.controller('appInput');
         isolateScope = directiveElem.isolateScope();
     }));
 
     it('Replaces the element with the appropriate content', function() {
         expect(element.attr('placeholder')).toMatch(mockPlaceholder);
         expect(mockInputObject).toEqual(isolateScope.inputObject);
-        expect(typeof isolateScope.submitFunc === "function").toBeTruthy();
+        expect(typeof isolateScope.submitFunc === 'function').toBeTruthy();
     });
 
-    describe("appInput handleKeyUp", function() {
+    describe('appInput handleKeyUp', function() {
 
         it ('will clear the input on getting an ecape key event', function() {
             // Given:
@@ -85,7 +85,7 @@ describe('appInput', function() {
 
             // Then:
             expect(mockInputObject).toEqual(isolateScope.inputObject);
-            expect(mockInputObject.value).toMatch("");
+            expect(mockInputObject.value).toMatch('');
         });
 
         it ('will submit the input on getting an enter key event', function() {

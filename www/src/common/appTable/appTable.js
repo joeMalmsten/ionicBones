@@ -15,15 +15,15 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: "appTable.html",
-        controller: "TableCtrl",
+        templateUrl: 'appTable.html',
+        controller: 'TableCtrl',
         scope: {
-            tableConfig: "=",
-            selectablePageSize: "=?",
-            pagingType: "@"
+            tableConfig: '=',
+            selectablePageSize: '=?',
+            pagingType: '@'
         },
         link: function(scope, element) {
-            var _ = require("lodash"),
+            var _ = require('lodash'),
                 filterInputElem,
                 filterColumnElem,
                 elem = $(element),
@@ -43,16 +43,16 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
                 var ret = "'";
 
                 if (reverse) {
-                    ret = "-" + ret;
+                    ret = '-' + ret;
                 }
 
-                ret += predicate.replace(["'", "-"], "") + "'";
+                ret += predicate.replace(["'", '-'], '') + "'";
 
                 return ret;
             }
 
             function initHotkeys() {
-                hotkeysFactory.bind("shift", scope);
+                hotkeysFactory.bind('shift', scope);
 
                 scope.$on("$destroy", function() {
                     hotkeysFactory.unbind("shift");
@@ -61,20 +61,20 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
             }
 
             function getScrollbarWidth() {
-                var outer = document.createElement("div");
-                outer.style.visibility = "hidden";
-                outer.style.width = "100px";
-                outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+                var outer = document.createElement('div');
+                outer.style.visibility = 'hidden';
+                outer.style.width = '100px';
+                outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
 
                 document.body.appendChild(outer);
 
                 var widthNoScroll = outer.offsetWidth;
                 // force scrollbars
-                outer.style.overflow = "scroll";
+                outer.style.overflow = 'scroll';
 
                 // add innerdiv
-                var inner = document.createElement("div");
-                inner.style.width = "100%";
+                var inner = document.createElement('div');
+                inner.style.width = '100%';
                 outer.appendChild(inner);
 
                 var widthWithScroll = inner.offsetWidth;
@@ -99,7 +99,7 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
 
                     columnCells = tcols[value];
                     currColHeader = theadCols.filter("[data-col-header='" + value + "']");
-                    cellData = columnCells.find(".cell-data");
+                    cellData = columnCells.find('.cell-data');
 
                     if (cellData.length > 0) {
                         cellDataWidth = Math.max.apply( null, cellData.map( function () {
@@ -233,7 +233,7 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
 
                 if (scope.pagingType && (scope.pagingType === 'scrollable' || scope.pagingType === 'scrollable-paging')) {
                     $timeout(function() {
-                        trows = tbody.find(".app-tr");
+                        trows = tbody.find('.app-tr');
                         setScrollableRowColors();
                     }, 0);
                 }
@@ -294,7 +294,7 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
             };
 
             scope.selectionHandler = function(item, column, rowIndex) {
-                console.log("selected made on row " + rowIndex + " in col " + column + ", value: " + item);
+                console.log('selected made on row ' + rowIndex + ' in col ' + column + ', value: ' + item);
 
                 // In the case we pick a selection larger than the column width
                 $timeout(function () {
@@ -316,10 +316,10 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
 
             scope.filter = {
                 column: {
-                    value: ""
+                    value: ''
                 },
                 input: {
-                    value: ""
+                    value: ''
                 }
             };
 
@@ -352,10 +352,10 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
             scope.reverse = true;
 
             $timeout(function() {
-                tbody = elem.find(".app-tbody");
-                thead = elem.find(".app-thead");
-                trows = tbody.find(".app-tr");
-                theadCols = thead.find(".app-th");
+                tbody = elem.find('.app-tbody');
+                thead = elem.find('.app-thead');
+                trows = tbody.find('.app-tr');
+                theadCols = thead.find('.app-th');
                 _.each(scope.tableColumns, function(value) {
                     tcols[value] = tbody.find(".app-td[data-col-header='" + value + "']");
                 });
@@ -384,11 +384,11 @@ angular.module('app.table', ['templates', 'app.bindHtmlCompile', 'app.input', 'a
                     });
                 }
 
-                filterInputElem = $(element).find(".filter-input > input");
-                filterColumnElem = $(element).find(".filter-column > input");
+                filterInputElem = $(element).find('.filter-input > input');
+                filterColumnElem = $(element).find('.filter-column > input');
                 filterInputElem.on('input', scope.handleFilterChange);
 
-                elem.find(".app-table").removeClass('loading');
+                elem.find('.app-table').removeClass('loading');
             }, 0);
         }
     };

@@ -4,24 +4,23 @@
 var dashboardModule;
 require('../../common/appTable/appTable');
 require('../../common/appFlyout/appFlyout');
-require('../../../assets/mocks/mockFlyout/mockFlyout');
 
-dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout', 'app.mockFlyout'])
+dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout'])
 .controller('DashboardCtrl', ['$scope', function($scope) {
     var _ = require('lodash'),
-        reasonCellObjHtml = "<div app-flyout " +
-            "container='.dashboard-page' " +
-            "items='tableConfig.availableOptions'" +
-            "current-item='row.metaData.action'" +
-            "on-select='selectionHandler(item, col, $index)'>" +
-            "{{row.metaData.action}}" +
-            "</div>",
+        reasonCellObjHtml = '<div app-flyout ' +
+            'container=".dashboard-page" ' +
+            'items="tableConfig.availableOptions"' +
+            'current-item="row.metaData.action"' +
+            'on-select="selectionHandler(item, col, $index)">' +
+            '{{row.metaData.action}}' +
+            '</div>',
         mockEstRevTableData = initMockTableData(75),
         mockLowSalesTableData = initMockLongTableData(50),
         mockThirdTableData = initMockTableData(25);
 
-    $scope.pageTitle = "Dashboard";
-    $scope.mockBreadcrumb = "Home -> Dashboard";
+    $scope.pageTitle = 'Dashboard';
+    $scope.mockBreadcrumb = 'Home -> Dashboard';
 
     function initTableObject(title, options, ignoredRowData, tableRowData, scrollType) {
         return {
@@ -35,23 +34,23 @@ dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout', 'a
 
     function initMockTableData(rowCount) {
         var tableRowObject = [],
-            storeNum;
+            number;
         for (var i = 0; i < rowCount; ++i) {
-            storeNum = parseInt(100 + Math.random() * 100);
+            number = parseInt(100 + Math.random() * 100);
             tableRowObject.push({
-                "Store Number": storeNum,
-                "Store Name": "Temp Store " + storeNum,
-                "Business Date": formatDate(new Date().getTime() * Math.random()),
-                "Estimated Sales": {
+                'Number': number,
+                'Name': 'Temp ' + number,
+                'Date': formatDate(new Date().getTime() * Math.random()),
+                'Sales': {
                     editable: true,
                     value: parseInt(Math.random() * rowCount)
                 },
-                "Reason": {
+                'Dropdown': {
                     html: reasonCellObjHtml
                 },
 
-                "metaData": {
-                    "action": 'none'
+                'metaData': {
+                    'action': 'none'
                 }
             });
         }
@@ -64,28 +63,28 @@ dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout', 'a
         for (var i = 0; i < rowCount; ++i) {
             storeNum = parseInt(100 + Math.random() * 100);
             tableRowObject.push({
-                "Store Number": storeNum,
-                "Store Name1": "Temp Store " + storeNum,
-                "Store Name2": "Temp Store " + storeNum,
-                "Store Name3": "Temp Store " + storeNum,
-                "Store Name4": "Temp Store " + storeNum,
-                "Store Name5": "Temp Store " + storeNum,
-                "Store Name6": "Temp Store " + storeNum,
-                "Store Name7": "Temp Store " + storeNum,
-                "Store Name8": "Temp Store " + storeNum,
-                "Store Name9": "Temp Store " + storeNum,
-                "Store Name10": "Temp Store " + storeNum,
-                "Business Date": formatDate(new Date().getTime() * Math.random()),
-                "Estimated Sales": {
+                'Number': storeNum,
+                'Name1': 'Temp Store ' + storeNum,
+                'Name2': 'Temp Store ' + storeNum,
+                'Name3': 'Temp Store ' + storeNum,
+                'Name4': 'Temp Store ' + storeNum,
+                'Name5': 'Temp Store ' + storeNum,
+                'Name6': 'Temp Store ' + storeNum,
+                'Name7': 'Temp Store ' + storeNum,
+                'Name8': 'Temp Store ' + storeNum,
+                'Name9': 'Temp Store ' + storeNum,
+                'Name10': 'Temp Store ' + storeNum,
+                'Date': formatDate(new Date().getTime() * Math.random()),
+                'Sales': {
                     editable: true,
                     value: parseInt(Math.random() * rowCount)
                 },
-                "Reason": {
+                'Dropdown': {
                     html: reasonCellObjHtml
                 },
 
-                "metaData": {
-                    "action": 'none'
+                'metaData': {
+                    'action': 'none'
                 }
             });
         }
@@ -106,20 +105,20 @@ dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout', 'a
 
     $scope.tables = [
         initTableObject(
-            "Estimated Revenue",
+            'Table One',
             ['Accept', 'Modify', 'none'],
             ['metaData'],
             mockEstRevTableData
         ),
         initTableObject(
-            "Low Sales",
-            ['Yep, this is low', "This Could be Low", "Abandon Ship"],
+            'Table Two - Long',
+            ['Yep, this is low', 'This Could be Low', 'Abandon Ship'],
             ['metaData'],
             mockLowSalesTableData
         ),
         initTableObject(
-            "Third Table",
-            ['One', "Two", "Three"],
+            'Table Three',
+            ['One', 'Two', 'Three'],
             ['metaData'],
             mockThirdTableData
         )

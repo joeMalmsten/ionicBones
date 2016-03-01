@@ -5,7 +5,7 @@ var loginModule;
 
 require('../../common/appInput/appInput');
 
-loginModule = angular.module('app.login', ["app.input"])
+loginModule = angular.module('app.login', ['app.input'])
 .controller('LoginCtrl', ['$scope', '$state', '$timeout', function($scope, $state, $timeout) {
     // This is only needed for possible callbacks, but I still
     //  prefer to set it for consistency whenever I need to use 'this'
@@ -23,8 +23,8 @@ loginModule = angular.module('app.login', ["app.input"])
         password: 'password'
     };
 
-    $scope.mockLabel = "This is a mock label.";
-    $scope.errorMessage = "Login information is incorrect.";
+    $scope.mockLabel = 'This is a mock label.';
+    $scope.errorMessage = 'Login information is incorrect.';
     $scope.displayErrorMessage = false;
     $scope.inputValues = {
         username: {
@@ -51,7 +51,7 @@ loginModule = angular.module('app.login', ["app.input"])
 
     $scope.canSubmit = function() {
         var success = true;
-        _.each($scope.inputValues, function(property, key) {
+        _.each($scope.inputValues, function(property) {
             if (!property.value) {
                 success = false;
             }

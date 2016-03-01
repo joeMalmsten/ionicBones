@@ -12,12 +12,12 @@ angular.module('app.hotkeys', ['cfp.hotkeys'])
         documentElem = $(document);
 
     function defaultCallback(event, hotkey) {
-        var keyCombo = "";
+        var keyCombo = '';
 
         // For multiple Keypresses, e.eg.
         //  shift + ctrl keys would be 'shiftKeyctrlKey'
-        _.each(hotkey.combo, function(value){
-            keyCombo += value + "Key";
+        _.each(hotkey.combo, function(value) {
+            keyCombo += value + 'Key';
         });
         self.keybindings[keyCombo] = true;
         documentElem.on('keyup', function(event) {

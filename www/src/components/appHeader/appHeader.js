@@ -1,12 +1,12 @@
 /*global angular require*/
-require("./appHeader.html");
+require('./appHeader.html');
 
 angular.module('app.header', ['templates'])
 .controller('NavbarCtrl', ['$scope', '$state', function($scope, $state) {
     var self = this;
     self.isLoggedIn = false;
-    $scope.mockLabel = "app header";
-    $scope.userName = "Test User";
+    $scope.mockLabel = 'app header';
+    $scope.userName = 'Test User';
 
     $scope.redirectToDashboard = function() {
         if (self.isLoggedIn) {
@@ -20,11 +20,11 @@ angular.module('app.header', ['templates'])
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: "appHeader.html",
-        controller: "NavbarCtrl",
+        templateUrl: 'appHeader.html',
+        controller: 'NavbarCtrl',
         scope: {
             placeholder: '@',
-            inputObject: "=",
+            inputObject: '=',
             submitFunc: '&'
         }
     };

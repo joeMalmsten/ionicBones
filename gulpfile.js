@@ -67,6 +67,36 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('fail'));
 });
 
+gulp.task('testBuild', function() {
+    gulp.src('./scss/ionic.app.scss')
+        .pipe(sass())
+        .on('error', handleError)
+        .pipe(gulp.dest(paths.css))
+        .pipe(cssnano({
+            keepSpecialComments: 0
+        }))
+        .pipe(rename({extname: '.min.css'}))
+        .pipe(gulp.dest(paths.css));
+
+    // Single entry point to browserify
+    browserify(opts)
+        .transform(ngHtml2Js({
+            module: 'templates', // optional module name
+            extension: 'html' // optionally specify what file types to look for
+        }))
+        .bundle()
+        // log errors if they happen
+        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+        .pipe(vinylSource('bundle.js'))
+        // optional, remove if you don't need to buffer file contents
+        .pipe(buffer())
+        // optional, remove if you dont want sourcemaps
+        .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
+           // Add transformation tasks to the pipeline here.
+        .pipe(sourcemaps.write('./')) // writes .map file
+        .pipe(gulp.dest(paths.dist));
+});
+
 gulp.task('sass', function() {
     gulp.src('./scss/ionic.app.scss')
         .pipe(sass())
