@@ -1,0 +1,1215 @@
+{
+    "project": {
+        "name": "app",
+        "description": "javascript docs for the app",
+        "version": "3.5.0",
+        "url": "http://yuilibrary.com/"
+    },
+    "files": {
+        "www/src/common/appBindHtmlCompile/appBindHtmlCompile.js": {
+            "name": "www/src/common/appBindHtmlCompile/appBindHtmlCompile.js",
+            "modules": {
+                "app.bindHtmlCompile": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/common/appFilters/appFilters.js": {
+            "name": "www/src/common/appFilters/appFilters.js",
+            "modules": {
+                "app.filters": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/common/appFlyout/appFlyout.js": {
+            "name": "www/src/common/appFlyout/appFlyout.js",
+            "modules": {
+                "app.flyout": 1
+            },
+            "classes": {
+                "flyoutFactory": 1,
+                "FlyoutCtrl": 1,
+                "appFlyout": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/common/appInput/appInput.js": {
+            "name": "www/src/common/appInput/appInput.js",
+            "modules": {
+                "app.input": 1
+            },
+            "classes": {
+                "InputCtrl": 1,
+                "appInput": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/common/appTable/appTable.js": {
+            "name": "www/src/common/appTable/appTable.js",
+            "modules": {
+                "app.table": 1
+            },
+            "classes": {
+                "TableCtrl": 1,
+                "appTable": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/common/hotkeys/hotkeys.js": {
+            "name": "www/src/common/hotkeys/hotkeys.js",
+            "modules": {
+                "app.hotkeys": 1
+            },
+            "classes": {
+                "hotkeysFactory": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/common/safeApply/safeApply.js": {
+            "name": "www/src/common/safeApply/safeApply.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/components/appHeader/appHeader.js": {
+            "name": "www/src/components/appHeader/appHeader.js",
+            "modules": {},
+            "classes": {
+                "NavbarCtrl": 1,
+                "appHeader": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/components/dashboard/dashboardCtrl.js": {
+            "name": "www/src/components/dashboard/dashboardCtrl.js",
+            "modules": {
+                "app.dashboard": 1
+            },
+            "classes": {
+                "DashboardCtrl": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "www/src/components/login/loginCtrl.js": {
+            "name": "www/src/components/login/loginCtrl.js",
+            "modules": {
+                "app.login": 1
+            },
+            "classes": {
+                "LoginCtrl": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "app.bindHtmlCompile": {
+            "name": "app.bindHtmlCompile",
+            "submodules": {},
+            "elements": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/common/appBindHtmlCompile/appBindHtmlCompile.js",
+            "line": 4,
+            "description": "Directive that binds html and then has angular compile it"
+        },
+        "app.filters": {
+            "name": "app.filters",
+            "submodules": {},
+            "elements": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/common/appFilters/appFilters.js",
+            "line": 4,
+            "description": "Provides new filters usable anywhere this module is included"
+        },
+        "app.flyout": {
+            "name": "app.flyout",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "flyoutFactory": 1,
+                "FlyoutCtrl": 1,
+                "appFlyout": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 198,
+            "description": "module contains the logic for modals, popups, and dropdowns. (flyouts)\n\nDependencies: templates(third party)",
+            "itemtype": "main"
+        },
+        "app.input": {
+            "name": "app.input",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "InputCtrl": 1,
+                "appInput": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/common/appInput/appInput.js",
+            "line": 66,
+            "description": "module contains the logic custom inputs\n\nDependencies: templates(third party)",
+            "itemtype": "main"
+        },
+        "app.table": {
+            "name": "app.table",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "TableCtrl": 1,
+                "appTable": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 29,
+            "description": "module contains the logic for generating tables.\n\nDependencies: templates(third party), app.bindHtmlCompile, app.input, app.flyout,\napp.filters, app.hotkeys",
+            "itemtype": "main"
+        },
+        "app.hotkeys": {
+            "name": "app.hotkeys",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "hotkeysFactory": 1,
+                "NavbarCtrl": 1,
+                "appHeader": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/components/appHeader/appHeader.js",
+            "line": 41,
+            "description": "Provides a factory that handles the keybindings for our app\n\nDependencies: cfp.hotkeys(third party)"
+        },
+        "app.dashboard": {
+            "name": "app.dashboard",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "DashboardCtrl": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/components/dashboard/dashboardCtrl.js",
+            "line": 18,
+            "description": "module contains the logic for the dashboard page\n\nDependencies: app.table, app.flyout",
+            "itemtype": "main"
+        },
+        "app.login": {
+            "name": "app.login",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "LoginCtrl": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "www/src/components/login/loginCtrl.js",
+            "line": 18,
+            "description": "module contains the logic custom inputs\n\nDependencies: app.input",
+            "itemtype": "main"
+        }
+    },
+    "classes": {
+        "flyoutFactory": {
+            "name": "flyoutFactory",
+            "shortname": "flyoutFactory",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.flyout",
+            "namespace": "",
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 17,
+            "description": "A factory than contains the logic to create flyouts in js.",
+            "is_constructor": 1
+        },
+        "FlyoutCtrl": {
+            "name": "FlyoutCtrl",
+            "shortname": "FlyoutCtrl",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.flyout",
+            "namespace": "",
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 120,
+            "description": "A controller that contains the main logic for the flyout directive.",
+            "params": [
+                {
+                    "name": "$scope",
+                    "description": "The isolate scope of the directive.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$element",
+                    "description": "The compiled directive element.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$templateCache",
+                    "description": "Contains all html templates that are stored in the 'templates' module.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$compile",
+                    "description": "Compiles any angular code in a given html string.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$timeout",
+                    "description": "An Angular wrapper around SetTimeout",
+                    "type": "Object"
+                },
+                {
+                    "name": "flyoutFactory",
+                    "description": "An instantiation of the above factory class. Creates and positions flyout",
+                    "type": "Object"
+                }
+            ]
+        },
+        "appFlyout": {
+            "name": "appFlyout",
+            "shortname": "appFlyout",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.flyout",
+            "namespace": "",
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 198,
+            "description": "A directive that uses the FlyoutCtrl controller to handle creating any\nflyouts from html in angular."
+        },
+        "InputCtrl": {
+            "name": "InputCtrl",
+            "shortname": "InputCtrl",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.input",
+            "namespace": "",
+            "file": "www/src/common/appInput/appInput.js",
+            "line": 17,
+            "description": "A controller that contains the main logic for the appInput directive.",
+            "params": [
+                {
+                    "name": "$scope",
+                    "description": "The isolate scope of the directive.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$element",
+                    "description": "The compiled directive element.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$timeout",
+                    "description": "An Angular wrapper around SetTimeout",
+                    "type": "Object"
+                }
+            ]
+        },
+        "appInput": {
+            "name": "appInput",
+            "shortname": "appInput",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.input",
+            "namespace": "",
+            "file": "www/src/common/appInput/appInput.js",
+            "line": 66,
+            "description": "A directive that uses the InputCtrl controller to handle creating inputs from\nhtml in angular."
+        },
+        "TableCtrl": {
+            "name": "TableCtrl",
+            "shortname": "TableCtrl",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.table",
+            "namespace": "",
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 22,
+            "description": "A controller that contains the main logic for the table directive."
+        },
+        "appTable": {
+            "name": "appTable",
+            "shortname": "appTable",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.table",
+            "namespace": "",
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 29,
+            "description": "A directive that contains the main logic for creating tables.",
+            "params": [
+                {
+                    "name": "$timeout",
+                    "description": "Angular wrapper around SetTimeout",
+                    "type": "Object"
+                },
+                {
+                    "name": "filterFilter",
+                    "description": "angular filter for filtering ng-repeat. Slow and we should remove ng-repeat",
+                    "type": "Object"
+                },
+                {
+                    "name": "hotkeysFactory",
+                    "description": "Instantiation of the hotkey factory that manages all of our apps keybindings",
+                    "type": "Object"
+                }
+            ]
+        },
+        "hotkeysFactory": {
+            "name": "hotkeysFactory",
+            "shortname": "hotkeysFactory",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.hotkeys",
+            "namespace": "",
+            "file": "www/src/common/hotkeys/hotkeys.js",
+            "line": 14,
+            "description": "A factory than contains the logic to handle hotkeys",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "hotkeys",
+                    "description": "A third party library for javascript hotkey management.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "NavbarCtrl": {
+            "name": "NavbarCtrl",
+            "shortname": "NavbarCtrl",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.hotkeys",
+            "namespace": "",
+            "file": "www/src/components/appHeader/appHeader.js",
+            "line": 12,
+            "description": "A controller that contains the main logic for the app header",
+            "params": [
+                {
+                    "name": "$scope",
+                    "description": "The isolate scope of the directive.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$state",
+                    "description": "Ionics router, used to change to a new page",
+                    "type": "Object"
+                }
+            ]
+        },
+        "appHeader": {
+            "name": "appHeader",
+            "shortname": "appHeader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.hotkeys",
+            "namespace": "",
+            "file": "www/src/components/appHeader/appHeader.js",
+            "line": 41,
+            "description": "A directive that contains the main logic for using the appHeader in html"
+        },
+        "DashboardCtrl": {
+            "name": "DashboardCtrl",
+            "shortname": "DashboardCtrl",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.dashboard",
+            "namespace": "",
+            "file": "www/src/components/dashboard/dashboardCtrl.js",
+            "line": 18,
+            "description": "A controller that contains all of the Dashboard page logic",
+            "params": [
+                {
+                    "name": "$scope",
+                    "description": "The isolate scope of the controller.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "LoginCtrl": {
+            "name": "LoginCtrl",
+            "shortname": "LoginCtrl",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "app.login",
+            "namespace": "",
+            "file": "www/src/components/login/loginCtrl.js",
+            "line": 18,
+            "description": "A controller that contains the main logic for the login page.",
+            "params": [
+                {
+                    "name": "$scope",
+                    "description": "The isolate scope of the directive.",
+                    "type": "Object"
+                },
+                {
+                    "name": "$state",
+                    "description": "Ionic wrapper around the Angular page router",
+                    "type": "Object"
+                },
+                {
+                    "name": "$timeout",
+                    "description": "An Angular wrapper around SetTimeout",
+                    "type": "Object"
+                }
+            ]
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "www/src/common/appFilters/appFilters.js",
+            "line": 10,
+            "description": "Returns this model's attributes as...",
+            "itemtype": "method",
+            "name": "range",
+            "return": {
+                "description": "An array of numbers from 0 - range",
+                "type": "Array"
+            },
+            "class": "flyoutFactory",
+            "module": "app.filters"
+        },
+        {
+            "file": "www/src/common/appFilters/appFilters.js",
+            "line": 26,
+            "description": "Returns this model's attributes as...",
+            "itemtype": "method",
+            "name": "startFrom",
+            "return": {
+                "description": "An array of input values starting from start",
+                "type": "Array"
+            },
+            "class": "flyoutFactory",
+            "module": "app.filters"
+        },
+        {
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 29,
+            "description": "Positions the flyoutElem based on the container and target elems.",
+            "itemtype": "method",
+            "name": "positionFlyout",
+            "params": [
+                {
+                    "name": "targetElem",
+                    "description": "The target element, the flyout will be placed below this element.",
+                    "type": "Object"
+                },
+                {
+                    "name": "containerElem",
+                    "description": "The element in the dom the flyout will be appended to,\npositioning needs to take container offset into account.",
+                    "type": "Object"
+                },
+                {
+                    "name": "flyoutElem",
+                    "description": "The flyout element being positioned.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "flyoutFactory",
+            "module": "app.flyout"
+        },
+        {
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 54,
+            "description": "Initializes all event listeners needed for the flyout.",
+            "itemtype": "method",
+            "name": "positionFlyout",
+            "params": [
+                {
+                    "name": "targetElem",
+                    "description": "The target element, the flyout will be placed below this element.",
+                    "type": "Object"
+                },
+                {
+                    "name": "containerElem",
+                    "description": "The element in the dom the flyout will be appended to,\npositioning needs to take container offset into account.",
+                    "type": "Object"
+                },
+                {
+                    "name": "buttonElem",
+                    "description": "The element what when clicked will toggle the display of the\nflyout.",
+                    "type": "Object"
+                },
+                {
+                    "name": "flyoutElem",
+                    "description": "The flyout element being positioned.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "flyoutFactory",
+            "module": "app.flyout"
+        },
+        {
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 91,
+            "description": "Initializes all event listeners needed for the flyout.",
+            "itemtype": "method",
+            "name": "positionFlyout",
+            "params": [
+                {
+                    "name": "flyoutElem",
+                    "description": "The flyout element being positioned.",
+                    "type": "Object"
+                },
+                {
+                    "name": "targetElem",
+                    "description": "The target element, the flyout will be placed below this element.",
+                    "type": "Object"
+                },
+                {
+                    "name": "containerElem",
+                    "description": "The element in the dom the flyout will be appended to,\npositioning needs to take container offset into account.",
+                    "type": "Object"
+                },
+                {
+                    "name": "buttonElem",
+                    "description": "The element what when clicked will toggle the display of the\nflyout.",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "\n An object containing custom options.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "flyoutFactory",
+            "module": "app.flyout"
+        },
+        {
+            "file": "www/src/common/appFlyout/appFlyout.js",
+            "line": 147,
+            "description": "Sets the currently selected item and calls a custom onSelect function if\ndefined.",
+            "itemtype": "method",
+            "name": "$scope.selectItem",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "The event that was fired to call this function, usually 'click'.",
+                    "type": "Object"
+                },
+                {
+                    "name": "item",
+                    "description": "The item that was selected during the event.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "FlyoutCtrl",
+            "module": "app.flyout"
+        },
+        {
+            "file": "www/src/common/appInput/appInput.js",
+            "line": 31,
+            "description": "Handles any special input, e.g. enter or escape on the input",
+            "itemtype": "method",
+            "name": "self.handleKeyUp",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "The keyup event that was fired to call this function.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "InputCtrl",
+            "module": "app.input"
+        },
+        {
+            "file": "www/src/common/appInput/appInput.js",
+            "line": 47,
+            "description": "Clears input value when called",
+            "itemtype": "method",
+            "name": "$scope.clearInput",
+            "return": {
+                "description": "none"
+            },
+            "class": "InputCtrl",
+            "module": "app.input"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 51,
+            "description": "Initializes the table, put logic here instead of in the controller",
+            "itemtype": "method",
+            "name": "link",
+            "params": [
+                {
+                    "name": "scope",
+                    "description": "The isolate scope of the directive",
+                    "type": "Object"
+                },
+                {
+                    "name": "element",
+                    "description": "The compiled element of the directive",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 76,
+            "description": "Sanitizes sorting predicates to be used with angular.",
+            "itemtype": "method",
+            "name": "sanitizePredicate",
+            "params": [
+                {
+                    "name": "predicate",
+                    "description": "The name of the predicate we want to use for sorting.",
+                    "type": "String"
+                },
+                {
+                    "name": "reverse",
+                    "description": "Whether or not we are sorting in Asc or Desc order.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Sanitized predicate.",
+                "type": "String"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 98,
+            "description": "Inits keybindings for table when table is made, creates event\nto destroy keybindings when table no longer exists",
+            "itemtype": "method",
+            "name": "initHotkeys",
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 115,
+            "description": "The width of the scrollbar needs to be taken into account when\nresizing the scrollable table. Scrollbar width changes on OS and\nbrowser so we need to create a scrollbar, get its' width and then\ndestroy it",
+            "itemtype": "method",
+            "name": "getScrollbarWidth",
+            "return": {
+                "description": "the width of a scroll bar on the users OS/Browser"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 149,
+            "description": "Resizes the column widths to make the scrollable table fit every-\nthing without having to create a line-break in a row",
+            "itemtype": "method",
+            "name": "setColumnWidths",
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 210,
+            "description": "Angular filtering rewrites everything in the table on the DOM,\nthis is incredibly slow. Our sort simply adds a class that hides\nany filtered objects and is much faster.",
+            "itemtype": "method",
+            "name": "filterScrollableTable",
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 242,
+            "description": "Sets row color for every other row on a scrollable table, $index\ndoesn't work since we are using css/classes to hide rows instead\nof removing them from the DOM",
+            "itemtype": "method",
+            "name": "setScrollableRowColors",
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 266,
+            "description": "Calculates the number of visible rows on a scrollable table using\nthe properties of the table and rows",
+            "itemtype": "method",
+            "name": "calculateVisibleRows",
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 281,
+            "description": "used to determine the ng-class of our headers, to show what is\nbeing used to sort the table and in what direction",
+            "itemtype": "method",
+            "name": "scope.isSortingBy",
+            "params": [
+                {
+                    "name": "col",
+                    "description": "The name of the column being checked",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "0 for not sorted, 1 for Asc sort, -1 for Desc",
+                "type": "Integer"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 311,
+            "description": "Generates a sorting predicate for angular to base its sort on",
+            "itemtype": "method",
+            "name": "scope.sortTableBy",
+            "params": [
+                {
+                    "name": "predicate",
+                    "description": "The name of the new column to sort by",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 352,
+            "description": "Determines if enough filter values are set to filter our table",
+            "itemtype": "method",
+            "name": "scope.handleFilterChange",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "\n The name of a column selected by the dropdown, possibly null",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 386,
+            "description": "Calculates the number of pages depending on the page size",
+            "itemtype": "method",
+            "name": "scope.calculatePageCount",
+            "params": [
+                {
+                    "name": "newSize",
+                    "description": "\n A new page size passed in from the dropdown, possibly null",
+                    "type": "Integer",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 417,
+            "description": "Changes the table to the newly selected page",
+            "itemtype": "method",
+            "name": "scope.selectPage",
+            "params": [
+                {
+                    "name": "pageNumber",
+                    "description": "The index of the page we need to switch to",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/appTable/appTable.js",
+            "line": 437,
+            "description": "onSelect override function for the table dropdowns.",
+            "itemtype": "method",
+            "name": "scope.selectionHandler",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "The selected item.",
+                    "type": "String"
+                },
+                {
+                    "name": "column",
+                    "description": "The name of the column containing the dropdown that was used.",
+                    "type": "String"
+                },
+                {
+                    "name": "rowIndex",
+                    "description": "The index of the row that was selected, does not currently work.",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "appTable",
+            "module": "app.table"
+        },
+        {
+            "file": "www/src/common/hotkeys/hotkeys.js",
+            "line": 30,
+            "description": "the default function that is called when a hotkey is pressed",
+            "itemtype": "method",
+            "name": "defaultCallback",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "The event that triggered the callback",
+                    "type": "Object"
+                },
+                {
+                    "name": "hotkey",
+                    "description": "The hotkey object generated by the third party hotkeys library",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "hotkeysFactory",
+            "module": "app.hotkeys"
+        },
+        {
+            "file": "www/src/common/hotkeys/hotkeys.js",
+            "line": 57,
+            "description": "binds a key combo to a scope and assigns is a callback when the combo\nis used.",
+            "itemtype": "method",
+            "name": "self.bind",
+            "params": [
+                {
+                    "name": "combo",
+                    "description": "The keystroke combo being bound",
+                    "type": "String"
+                },
+                {
+                    "name": "scope",
+                    "description": "The isolate scope we want this keybinding to apply to",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "\n The function to be called when the combo is used, if set overrides\ndefaultCallback()",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "desc",
+                    "description": "\n Optional strng describing the keybinding",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "hotkeysFactory",
+            "module": "app.hotkeys"
+        },
+        {
+            "file": "www/src/common/hotkeys/hotkeys.js",
+            "line": 82,
+            "description": "unbinds a currently bound keybinding",
+            "itemtype": "method",
+            "name": "self.bind",
+            "params": [
+                {
+                    "name": "combo",
+                    "description": "The keystroke combo being unbound",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "hotkeysFactory",
+            "module": "app.hotkeys"
+        },
+        {
+            "file": "www/src/common/safeApply/safeApply.js",
+            "line": 4,
+            "description": "tells the scope to apply any changes if the digest cycle is at a safe\npoint to do so.",
+            "itemtype": "method",
+            "name": "safeApply",
+            "params": [
+                {
+                    "name": "scope",
+                    "description": "The scope being updated",
+                    "type": "Object"
+                },
+                {
+                    "name": "fn",
+                    "description": "\n Optional callback when the apply is called, I never use it",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "NavbarCtrl",
+            "module": "app.hotkeys"
+        },
+        {
+            "file": "www/src/components/appHeader/appHeader.js",
+            "line": 27,
+            "description": "Redirects to dashboard if logged in, goes to login page otherwise",
+            "itemtype": "method",
+            "name": "$scope.redirectToDashboard",
+            "return": {
+                "description": "none"
+            },
+            "class": "NavbarCtrl",
+            "module": "app.hotkeys"
+        },
+        {
+            "file": "www/src/components/dashboard/dashboardCtrl.js",
+            "line": 41,
+            "description": "Creates a tableConfig object from the given params",
+            "itemtype": "method",
+            "name": "initTableObject",
+            "params": [
+                {
+                    "name": "title",
+                    "description": "The title of the new table",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "A list of selectable options for dropdowns in the table",
+                    "type": "Array"
+                },
+                {
+                    "name": "ignoredRowData",
+                    "description": "A list of present data objects to not turn into table columns",
+                    "type": "Array"
+                },
+                {
+                    "name": "scrollType",
+                    "description": "The type of pagination/scrolling the table will use",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "a tableConfig object"
+            },
+            "class": "DashboardCtrl",
+            "module": "app.dashboard"
+        },
+        {
+            "file": "www/src/components/dashboard/dashboardCtrl.js",
+            "line": 65,
+            "description": "Creates some fake table data while we do not have an API to get data from",
+            "itemtype": "method",
+            "name": "initMockTableData",
+            "params": [
+                {
+                    "name": "rowCount",
+                    "description": "The number of fake rows to generate",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "a tableConfig object"
+            },
+            "class": "DashboardCtrl",
+            "module": "app.dashboard"
+        },
+        {
+            "file": "www/src/components/dashboard/dashboardCtrl.js",
+            "line": 98,
+            "description": "Creates some fake table data while we do not have an API to get data from\nThis fake table has enough columns to force x-axis scrolling for testing",
+            "itemtype": "method",
+            "name": "initMockLongTableData",
+            "params": [
+                {
+                    "name": "rowCount",
+                    "description": "The number of fake rows to generate",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "a list of table rows.",
+                "type": "Array"
+            },
+            "class": "DashboardCtrl",
+            "module": "app.dashboard"
+        },
+        {
+            "file": "www/src/components/dashboard/dashboardCtrl.js",
+            "line": 141,
+            "description": "formats a JS Date object into a yyyy-mm-dd string, should be pulled into\na common/utilities service or something so it can be shared",
+            "itemtype": "method",
+            "name": "formatDate",
+            "params": [
+                {
+                    "name": "date",
+                    "description": "The date object or string to be formatted.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "a formatted date in yyyy-mm-dd format.",
+                "type": "String"
+            },
+            "class": "DashboardCtrl",
+            "module": "app.dashboard"
+        },
+        {
+            "file": "www/src/components/dashboard/dashboardCtrl.js",
+            "line": 162,
+            "description": "sets which table is in the active view",
+            "itemtype": "method",
+            "name": "setActiveTable",
+            "params": [
+                {
+                    "name": "activeIndex",
+                    "description": "The table index we want to switch to",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "none"
+            },
+            "class": "DashboardCtrl",
+            "module": "app.dashboard"
+        },
+        {
+            "file": "www/src/components/login/loginCtrl.js",
+            "line": 53,
+            "description": "submits and attempts to validate a login, no back-end yet",
+            "itemtype": "method",
+            "name": "$scope.submitLogin",
+            "return": {
+                "description": "none"
+            },
+            "class": "LoginCtrl",
+            "module": "app.login"
+        },
+        {
+            "file": "www/src/components/login/loginCtrl.js",
+            "line": 73,
+            "description": "Tells the user whether or not that have enough information to submit for\nlogin",
+            "itemtype": "method",
+            "name": "$scope.canSubmit",
+            "return": {
+                "description": "whether we can submit or not",
+                "type": "Boolean"
+            },
+            "class": "LoginCtrl",
+            "module": "app.login"
+        },
+        {
+            "file": "www/src/components/login/loginCtrl.js",
+            "line": 90,
+            "description": "creates any necessary jquery selectors, always run AFTER angular finishes\nrendering. This is the reason for the timeout(func(){}, 0)",
+            "itemtype": "method",
+            "name": "initSelectors",
+            "class": "LoginCtrl",
+            "module": "app.login"
+        }
+    ],
+    "warnings": []
+}
