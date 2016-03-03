@@ -1,5 +1,95 @@
-.sales-audit__button {
-    width: 150px;
-    height 50px;
+//---------------------------------Variables----------------------------------\\
+// Font Weights
+$ultra-light-font: 100;
+$light-font: 200;
+$demi-font: 300;
+$regular-font: 400;
+$medium-font: 500;
+$demi-bold-font: 600;
+$bold-font: 700;
+$extra-bold-font: 800;
+$ultra-bold-font: 900;
+
+
+//-------------------------------Common Elements------------------------------\\
+
+// Keep this at the highest level so any below identifiers can overwrite the
+//  color.
+span, header, h1, h2, h3, h4, h5, h6, input, td, th, .button {
+    color: #3d3935;
+    font-family: Avenir Next, Lato Sans, Helvetica;
+}
+
+h1, h2, h3, h4, h5, h6, header {
+    margin: 0;
+}
+
+header, h1, h2, h3, h4, th, .app-th, .button {
+    font-weight: $demi-bold-font;
+}
+
+h5, h6, input, td, .app-td, span {
+    font-weight: $medium-font;
+}
+
+.view-container {
+    top: 30px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    // This will overwrite ionics 100% height/width
+    height: initial;
+    width: initial;
+}
+
+.button {
+    min-width: 80px;
+    min-height: 25px;
+    line-height: 15px;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 5px solid #4a4540;
+    @include border-radius(3px);
+    background-color: #4a4540;
+    color: #e6e0db;
+
+    span, header, h1, h2, h3, h4, h5, h6, input, td, th, .button {
+        color: #e6e0db;
+    }
+
+    &:hover {
+        background-color: #33302c;
+        border-color: #4a4540;
+    }
+
+    &:active {
+        color: #898076;
+
+        span, header, h1, h2, h3, h4, h5, h6, input, td, th, .button {
+            color: #898076;
+        }
+    }
+
+    &.inactive {
+        @include opacity(0.25);
+    }
+}
+
+.form-container {
+    background-color: #006341;
     @include border-radius(5px);
+}
+
+.bar-label {
+    float: left;
+    margin: 4px 10px 0px 10px;
+
+    &.small {
+        margin: 8px 10px 0px 10px;
+    }
+
+    &.right-align {
+        float: right;
+    }
 }

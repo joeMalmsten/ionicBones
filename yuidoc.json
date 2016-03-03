@@ -1,0 +1,14 @@
+{
+    "name": "app",
+    "description": "javascript docs for the app",
+    "version": "3.5.0",
+    "url": "http://yuilibrary.com/",
+    "options": {
+        "linkNatives": "true",
+        "attributesEmit": "true",
+        "selleck": "true",
+        "exclude": "node_modules,lib,dist,plugins,platforms",
+        "paths": "*/js",
+        "outdir": "./docs"
+    }
+}

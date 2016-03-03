@@ -4,3 +4,7 @@
 node_modules/
 platforms/
 plugins/
+coverage/
+www/dist/
+www/assets/css
+**/.DS_Store

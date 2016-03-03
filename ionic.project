@@ -1,0 +1,14 @@
+{
+  "name": "app-App",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "lint",
+    "sass",
+    "browserify",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/dist/*",
+    "!www/lib/**/*"
+  ]
+}

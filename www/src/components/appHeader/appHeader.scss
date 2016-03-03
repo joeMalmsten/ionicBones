@@ -1,0 +1,22 @@
+.app-header {
+    background-color: #006341;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+
+    .icon {
+        float: left;
+        margin: 2px 10px;
+
+        // If we go to a sprite-sheet style for out images to increase
+        //  performance background-size will no longer work.
+        height: 25px;
+        width: 25px;
+        background-size: contain;
+
+        &.logo {
+            background-image: url("../img/logo.png");
+            cursor: pointer;
+        }
+    }
+}
