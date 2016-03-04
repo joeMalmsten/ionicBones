@@ -40,7 +40,10 @@ $ gulp test
 This will begin the test task which will run the tests, then continue to watch for any changes on tested files. Once the tests run once a coverage/ directory will be created containing a visual code coverage report you can view by opening Index.html.
 
 
-
-
 ## Issues
-Go ahead and make an issue on this repo or contact jmalmste.
+Go ahead and make an issue on this repo.
+
+
+## License
+
+The code is available under the [MIT License](LICENSE.md).
