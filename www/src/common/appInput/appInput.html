@@ -1,5 +1,5 @@
 <div class="app-input {{::customClass}}">
     <div ng-if="::prefix" class="prefix" ng-bind="::prefix"></div>
-    <input type="text" ng-readonly="::readonly" ng-model="inputObject.value" placeholder="{{placeholder}}"></input>
+    <input type="{{::(inputType || 'text')}}" ng-readonly="::readonly" ng-model="inputObject.value" placeholder="{{placeholder}}"></input>
     <div class="clear-button ion-close-round" ng-if="::!readonly" ng-click="clearInput()"></div>
 </div>

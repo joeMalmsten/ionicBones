@@ -70,10 +70,12 @@ angular.module('app.flyout', ['templates'])
             initListeners: function(targetElem, containerElem, buttonElem, flyoutElem) {
                 var self = this,
                     dontHideOnSelect = self.options.dontHideOnSelect || false;
-                buttonElem.on('click', function() {
+                buttonElem.on('click', function(e) {
                     self.positionFlyout(targetElem, containerElem, flyoutElem);
-                    buttonElem.toggleClass('active');
-                    flyoutElem.toggleClass('active');
+                    if ((!flyoutElem.is(e.target) && flyoutElem.has(e.target).length === 0)) {
+                        buttonElem.toggleClass('active');
+                        flyoutElem.toggleClass('active');
+                    }
 
                     if (flyoutElem.hasClass('active')) {
                         // Hide the flyout when we click any element other than it

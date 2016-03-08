@@ -2,7 +2,7 @@
     <div class="form-container login-page-form">
         <h4 class="label" ng-bind="mockLabel"></h4>
         <app-input class="login-page-input" placeholder="Username" submit-func="submitLogin()" input-object="inputValues.username"></app-input>
-        <app-input class="login-page-input" placeholder="Password" submit-func="submitLogin()" input-object="inputValues.password"></app-input>
+        <app-input class="login-page-input" input-type="password" placeholder="Password" submit-func="submitLogin()" input-object="inputValues.password"></app-input>
         <span class="label error-label" ng-bind="errorMessage" ng-class="{'active': displayErrorMessage}"></span>
         <div class="button" id="submit-button" ng-click="submitLogin();" ng-class="{'disabled' : !canSubmit()}">Submit</div>
     </div>

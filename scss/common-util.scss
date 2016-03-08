@@ -58,7 +58,7 @@ h5, h6, input, td, .app-td, span {
         color: #e6e0db;
     }
 
-    &:hover {
+    &:hover, &.active {
         background-color: #33302c;
         border-color: #4a4540;
     }
