@@ -82,6 +82,7 @@ angular.module('app.input', ['templates'])
             transparent: '=?',
             submitFunc: '&?',
             customClass: '@?',
+            inputType: '@?',
             prefix: '@?'
         }
     };

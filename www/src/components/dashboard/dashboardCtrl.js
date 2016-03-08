@@ -4,6 +4,7 @@
 var dashboardModule;
 require('../../common/appTable/appTable');
 require('../../common/appFlyout/appFlyout');
+require('../../../assets/mocks/mockFlyout/mockFlyout');
 
 /**
  * module contains the logic for the dashboard page
@@ -13,7 +14,7 @@ require('../../common/appFlyout/appFlyout');
  * @module app.dashboard
  * @main
  */
-dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout'])
+dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout', 'app.mockFlyout'])
 
 /**
  * A controller that contains all of the Dashboard page logic
@@ -22,7 +23,7 @@ dashboardModule = angular.module('app.dashboard', ['app.table', 'app.flyout'])
  * @param {Object} $scope
  *  The isolate scope of the controller.
  */
-.controller('DashboardCtrl', ['$scope', function($scope) {
+.controller('DashboardCtrl', ['$scope', '$templateCache', function($scope, $templateCache) {
     var _ = require('lodash'),
         reasonCellObjHtml = '<div app-flyout ' +
             'container=".dashboard-page" ' +

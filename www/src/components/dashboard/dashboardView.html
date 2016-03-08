@@ -12,10 +12,16 @@
     </div>
     <div class="dashboard-content">
         <div class="dashboard-table-pager">
-            <div class="button dashboard-nav-btn" ng-repeat="table in tables track by $index" ng-click="setActiveTable($index)">
+            <div class="button dashboard-nav-btn" ng-repeat="table in tables track by $index" ng-click="setActiveTable($index)" ng-class="{'active': $index === activeIndex}">
                 <h5 class="nav-btn-title" ng-bind="table.title"></h5>
                 <h4 class="nav-btn-data-count">{{table.tableData.length}}</h4>
             </div>
+
+            <!-- extra button for mock flyout example -->
+            <div app-flyout custom-flyout="mockFlyout.html" dont-hide-on-select="true" class="button dashboard-nav-btn">
+                <h5 class="nav-btn-title" >Mock Flyout Button</h5>
+            </div>
+            <!-- end mock flyout example button -->
         </div>
         <div class="dashboard-table-content">
             <div class="dashboard-table-todo">
